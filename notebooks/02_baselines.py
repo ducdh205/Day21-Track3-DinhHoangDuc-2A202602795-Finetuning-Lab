@@ -17,14 +17,27 @@
 
 # %%
 import json, os, pathlib, sys
+import hashlib
+import importlib.metadata
+import time
+from datetime import datetime, timezone
 sys.path.insert(0, str(pathlib.Path.cwd() / "src"))
 sys.path.insert(0, str(pathlib.Path.cwd().parent / "src"))
 
-from labkit import evaluate as ev, generate, report
+from labkit import evaluate as ev, generate, report, device
 from labkit.config import get_tier
+from labkit.integrity import eval_checksums
 
 ROOT = pathlib.Path.cwd() if (pathlib.Path.cwd() / "data").exists() else pathlib.Path.cwd().parent
 TIER = get_tier(os.environ.get("COMPUTE_TIER", "T4"))
+STARTED_AT = datetime.now(timezone.utc).isoformat()
+STARTED = time.perf_counter()
+FROZEN_PATH = ROOT / "results" / "baselines_frozen.json"
+if FROZEN_PATH.exists():
+    raise RuntimeError("Baselines đã đóng băng; không ghi đè. Đọc kết quả hiện có trước khi chạy lại.")
+if any((ROOT / "adapters").glob("*/adapter_config.json")) or (ROOT / "results/runs.csv").exists():
+    raise RuntimeError("Đã có artefact train. NB2 phải chạy trước khi train.")
+CHECKSUMS = eval_checksums(ROOT)
 
 def load_jsonl(p):
     return [json.loads(l) for l in open(p, encoding="utf-8") if l.strip()]
@@ -36,6 +49,8 @@ regression = load_jsonl(ROOT / "data" / "eval_regression.jsonl")
 # in results/ so the grader can see the run was abbreviated; a submitted run must use
 # the full sets (leave EVAL_LIMIT unset).
 EVAL_LIMIT = int(os.environ.get("EVAL_LIMIT", "0"))
+if EVAL_LIMIT < 0:
+    raise ValueError("EVAL_LIMIT phải >= 0")
 if EVAL_LIMIT:
     target, regression = target[:EVAL_LIMIT], regression[:EVAL_LIMIT]
     print(f"⚠ EVAL_LIMIT={EVAL_LIMIT} — SMOKE MODE, not a submittable run")
@@ -45,7 +60,11 @@ print(f"target={len(target)}  regression={len(regression)}  tier={TIER.name}")
 # ## 1. Nạp base model (chưa fine-tune)
 
 # %%
+print(device.banner(), flush=True)
+if device.describe()["device"] != "cuda":
+    raise RuntimeError("NB2 cần GPU NVIDIA. Chạy trên Colab T4; không tải model 4B trên CPU.")
 model, tok = generate.load_base(TIER)
+model.eval()
 generate.free_memory()
 
 # %% [markdown]
@@ -73,8 +92,18 @@ def score_run(model, tok, system_prompt, label):
     return scores, preds, rpreds
 
 
-scores_a, preds_a, _ = score_run(model, tok, generate.NAIVE_PROMPT, "(a) base + naive prompt")
+scores_a, preds_a, rpreds_a = score_run(model, tok, generate.NAIVE_PROMPT, "(a) base + naive prompt")
 scores_b, preds_b, rpreds_b = score_run(model, tok, generate.OPTIMIZED_PROMPT, "(b) base + optimized prompt")
+
+predictions = {
+    "model": TIER.model_id,
+    "target": [{"input": r["input"], "label": r["label"], "baseline_a": a, "baseline_b": b}
+               for r, a, b in zip(target, preds_a, preds_b)],
+    "regression": [{"instruction": r["instruction"], "keywords": r["keywords"],
+                    "baseline_a": a, "baseline_b": b}
+                   for r, a, b in zip(regression, rpreds_a, rpreds_b)],
+}
+report.write_json(predictions, "baseline_predictions.json", results_dir=ROOT / "results")
 
 # %% [markdown]
 # ## 3. Đóng băng
@@ -94,7 +123,31 @@ frozen = {
     "n_regression": len(regression),
     "eval_limit": EVAL_LIMIT or None,
     "smoke_mode": bool(EVAL_LIMIT),
+    "started_at_utc": STARTED_AT,
+    "finished_at_utc": datetime.now(timezone.utc).isoformat(),
+    "elapsed_seconds": round(time.perf_counter() - STARTED, 3),
+    "measured_before_training": True,
+    "eval_checksums_sha256": CHECKSUMS,
+    "checksum_convention": "sha256 with CRLF normalized to LF",
+    "naive_prompt": generate.NAIVE_PROMPT,
+    "optimized_prompt": generate.OPTIMIZED_PROMPT,
+    "optimized_prompt_sha256": hashlib.sha256(generate.OPTIMIZED_PROMPT.encode()).hexdigest(),
+    "hardware": device.describe(),
+    "precision": device.precision(),
+    "generation": {"do_sample": False, "enable_thinking": False, "batch_size": 4,
+                   "target_max_new_tokens": 160, "regression_max_new_tokens": 96},
+    "model_revision": getattr(model.config, "_commit_hash", None),
+    "packages": {name: importlib.metadata.version(name)
+                 for name in ("transformers", "tokenizers")},
+    "predictions_sha256": hashlib.sha256(
+        (ROOT / "results/baseline_predictions.json").read_bytes()).hexdigest(),
 }
+assert eval_checksums(ROOT) == CHECKSUMS, "Tập eval thay đổi trong lúc đo baseline"
+if EVAL_LIMIT or scores_b.target <= scores_a.target:
+    report.write_json(frozen, "baselines_candidate.json", results_dir=ROOT / "results")
+    raise RuntimeError("Chưa đóng băng: cần full eval và (b) > (a). "
+                       "Xem baselines_candidate.json, làm mạnh prompt (b) trước khi train.")
+frozen["frozen_at_utc"] = datetime.now(timezone.utc).isoformat()
 report.write_json(frozen, "baselines_frozen.json", results_dir=ROOT / "results")
 print(json.dumps(frozen, ensure_ascii=False, indent=2))
 

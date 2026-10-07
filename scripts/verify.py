@@ -32,7 +32,8 @@ def check(name: str, status: str, detail: str = "") -> None:
 
 
 def _sha(path: pathlib.Path) -> str:
-    return hashlib.sha256(path.read_bytes()).hexdigest()[:16]
+    from labkit.integrity import corpus_sha256
+    return corpus_sha256(path)[:16]
 
 
 def _load_json(path: pathlib.Path):
@@ -155,11 +156,10 @@ def full() -> None:
             from labkit.generate import OPTIMIZED_PROMPT
             expected = hashlib.sha256(OPTIMIZED_PROMPT.encode()).hexdigest()[:16]
             same = frozen.get("optimized_prompt_sha") == expected
-            check("baseline (b) prompt unmodified", OK if same else WARN,
+            check("baseline (b) prompt unmodified", OK if same else FAIL,
                   "" if same else
-                  "OPTIMIZED_PROMPT differs from the shipped one. That is allowed only if "
-                  "you made it STRONGER — say so in REPORT.md; weakening it to flatter the "
-                  "fine-tune is the main way to fail this lab's honesty check.")
+                  "OPTIMIZED_PROMPT differs from the prompt frozen by NB2. "
+                  "Do not change the baseline prompt after freezing.")
         except Exception as exc:
             check("baseline (b) prompt check", WARN, repr(exc))
 
@@ -167,11 +167,18 @@ def full() -> None:
         b = frozen.get("baseline_b", {}).get("target")
         if a is not None and b is not None:
             if b <= a:
-                check("baseline (b) beats (a)", WARN,
+                check("baseline (b) beats (a)", FAIL,
                       f"(b)={b:.3f} <= (a)={a:.3f} — your 'optimized' prompt is not "
                       "actually better. Improve it before claiming a fine-tune win.")
             else:
                 check("baseline (b) beats (a)", OK, f"(a)={a:.3f} -> (b)={b:.3f}")
+
+        from labkit.integrity import eval_checksums
+        saved_checksums = frozen.get("eval_checksums_sha256")
+        check("eval matches frozen baselines",
+              OK if saved_checksums == eval_checksums(ROOT) else FAIL,
+              "" if saved_checksums == eval_checksums(ROOT) else
+              "Eval checksum differs from NB2, or the frozen artifact lacks checksums.")
 
     # --- eval set untouched ---
     declared = (ROOT / "data" / "CUSTOM_DATASET.md").exists()

@@ -179,7 +179,26 @@ product   = tên sản phẩm xuất hiện nguyên văn trong ticket
 
 Ví dụ:
 Ticket: "Shop ơi, mình đặt bàn phím cơ mã đơn DH123456. Giao hàng chậm. Đã 3 ngày rồi. Nhờ shop kiểm tra."
-JSON: {"intent": "van_chuyen", "urgency": "trung_binh", "product": "bàn phím cơ", "sentiment": "trung_tinh"}"""
+JSON: {"intent": "van_chuyen", "urgency": "trung_binh", "product": "bàn phím cơ", "sentiment": "trung_tinh"}
+
+Hướng dẫn: phân loại độc lập từng trường. Sản phẩm lỗi thuộc san_pham_loi;
+yêu cầu đổi hoặc trả hàng thuộc doi_tra; yêu cầu trả lại tiền thuộc hoan_tien.
+Không suy diễn urgency từ sentiment: một khách bực mình vẫn có thể không vội.
+Sao chép đúng tên sản phẩm, không đưa mã đơn vào product.
+
+Các ví dụ bổ sung dưới đây lấy từ tập train (split seed 42), không lấy từ eval:
+Ticket: "Shop ơi, mình đặt tai nghe bluetooth mã đơn VN847706. Sai màu. Đã 3 ngày rồi. Bực mình."
+JSON: {"intent": "san_pham_loi", "urgency": "trung_binh", "product": "tai nghe bluetooth", "sentiment": "tieu_cuc"}
+Ticket: "Alo shop, mình đặt nồi chiên không dầu mã đơn DH630832. Bảo hành bao lâu. Đã 3 ngày rồi. Shop xem giúp."
+JSON: {"intent": "hoi_thong_tin", "urgency": "trung_binh", "product": "nồi chiên không dầu", "sentiment": "trung_tinh"}
+Ticket: "Alo shop, mình đặt đèn bàn LED mã đơn VN661768. Shipper không gọi. Khi nào tiện. Lần cuối mua ở đây."
+JSON: {"intent": "van_chuyen", "urgency": "thap", "product": "đèn bàn LED", "sentiment": "tieu_cuc"}
+Ticket: "Shop ơi, mình đặt chuột không dây mã đơn DH645694. Trả lại tiền. Gấp. Shop hỗ trợ tốt."
+JSON: {"intent": "hoan_tien", "urgency": "cao", "product": "chuột không dây", "sentiment": "tich_cuc"}
+Ticket: "Alo shop, mình đặt áo khoác gió mã đơn VN157511. Muốn đổi. Không vội. Mình vẫn tin tưởng shop."
+JSON: {"intent": "doi_tra", "urgency": "thap", "product": "áo khoác gió", "sentiment": "tich_cuc"}
+
+Áp dụng schema cho ticket mới của người dùng. Chỉ xuất object JSON của ticket mới."""
 
 
 CONTRAST_KEYS = ["attn_only", "wrong_lr", "qlora"]
