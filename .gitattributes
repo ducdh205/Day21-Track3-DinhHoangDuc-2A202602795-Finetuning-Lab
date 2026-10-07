@@ -1,0 +1,4 @@
+# Preserve the exact corpus bytes captured by the measured NB1 run.
+submission/evidence/nb1/*.jsonl -text whitespace=cr-at-eol
+# Console output is retained verbatim, including blank lines emitted by templates.
+submission/evidence/nb1/*.log -whitespace

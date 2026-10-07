@@ -1,0 +1,17 @@
+{
+  "all_passed": true,
+  "n_corpus_checked": 250,
+  "answer_content_exact": true,
+  "labels_aligned": true,
+  "file_hashes_match": true,
+  "report_links_exist": true,
+  "trl_tokenizer_supervised_tokens": 0,
+  "trl_tokenizer_total_tokens": 31,
+  "trl_trainer_template_result": "ValueError",
+  "mask_agreement_exit_code": 1,
+  "software_tests": {
+    "passed": 116,
+    "skipped": 3,
+    "environment": "Windows Python 3.11"
+  }
+}

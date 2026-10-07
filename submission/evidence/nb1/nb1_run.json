@@ -1,0 +1,25 @@
+{
+  "finished_at_utc": "2026-10-07T11:27:17.617249+00:00",
+  "elapsed_seconds": 33.696,
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "model_id": "unsloth/Qwen3.5-4B",
+  "tier": "T4",
+  "device": "CPU (tokenizer only)",
+  "max_length": 256,
+  "enable_thinking": false,
+  "seed": 42,
+  "n_train": 225,
+  "n_val": 25,
+  "packages": {
+    "transformers": "5.19.0",
+    "tokenizers": "0.23.2",
+    "jinja2": "3.1.6"
+  },
+  "chat_template_sha256": "8452ca85cb1e0ff04304c02f417a53305d5ba17f6eb9d5693343ad8355f985a8",
+  "files_sha256": {
+    "data/train_seed.jsonl": "0a60cb6d4cfddc416d47c7dd3da4a5b34c26b63331e5acfbcb1a3f6ce53ae5f7",
+    "data/split/train.jsonl": "f7d033740c26de4d2de629b8894716793087e82e44e37a572e9bdebac0a2a905",
+    "data/split/val.jsonl": "82a260e580549e8ee70ea048c0d611b9ab673c31d8062edb5772d9787fddfab5"
+  }
+}
