@@ -1,0 +1,32 @@
+{
+  "date_local": "2026-10-08",
+  "timezone": "Asia/Saigon",
+  "model_inference_or_training_executed": false,
+  "command": "python scripts/verify.py",
+  "exit_code": 1,
+  "gatekeeper": {
+    "passed": 14,
+    "warnings": 0,
+    "failures": 4
+  },
+  "software_tests": {
+    "passed": 123,
+    "skipped": 3,
+    "failed": 0
+  },
+  "missing_required_artifacts": [
+    "results/baselines_frozen.json",
+    "results/runs.csv",
+    "results/verdict.json",
+    "results/autopsy.json"
+  ],
+  "nb1_executed": true,
+  "nb1_max_length": 256,
+  "training_mask_validation_passed": true,
+  "colab_gpu_executed": false,
+  "blocker": "Google sign-in rejected in MCP automated browser",
+  "notebook_code_cells_compile": true,
+  "colab_source_archive_hashes_match": true,
+  "archive_files": 64,
+  "ready_to_submit": false
+}

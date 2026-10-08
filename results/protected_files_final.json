@@ -1,0 +1,77 @@
+[
+  {
+    "file": "data/eval_regression.jsonl",
+    "sha256_normalized": "9c6ba90ea86e28fbc7102bf4cc4cb1e23c4668cf95bfcae55c3c114d34dc133b",
+    "matches_HEAD": true
+  },
+  {
+    "file": "data/eval_target.jsonl",
+    "sha256_normalized": "2991050fefb848c8bf3fdbc021badea9500f758d90717d7a94ae2f9b09b8915e",
+    "matches_HEAD": true
+  },
+  {
+    "file": "data/train_seed.jsonl",
+    "sha256_normalized": "2a58fe45d7315da0fb2934495cb7ec6717254f6df95d9560d748b10aa45409e3",
+    "matches_HEAD": true
+  },
+  {
+    "file": "scripts/verify.py",
+    "sha256_normalized": "1be9f7b28b125eeb7c7d3103e45dcf9ab691f6799a5eea39caef2a5c4ac75f60",
+    "matches_HEAD": true
+  },
+  {
+    "file": "src/labkit/config.py",
+    "sha256_normalized": "7bbd6676e1381004189f055dfdbb146c602d188654b7f5b1423bfc000168a879",
+    "matches_HEAD": true
+  },
+  {
+    "file": "src/labkit/evaluate.py",
+    "sha256_normalized": "1b3abf6fe39c86b222d74bf75345d1f96f3abb66972e5b2498cb47b539e60e6e",
+    "matches_HEAD": true
+  },
+  {
+    "file": "tests/conftest.py",
+    "sha256_normalized": "1072e14f17cbbe8bdc53ef53f62042b493a5d5d51319cb746a7a920879291f9e",
+    "matches_HEAD": true
+  },
+  {
+    "file": "tests/fake_tokenizer.py",
+    "sha256_normalized": "3012d3785610d804d07770969c6363767ded7027a8453eff9c3a285ac8cb233a",
+    "matches_HEAD": true
+  },
+  {
+    "file": "tests/test_baselines.py",
+    "sha256_normalized": "9b1a2466f3c0c11e3d6e53a836d3bfbeef7594e532af364e725f5a7cafab655b",
+    "matches_HEAD": true
+  },
+  {
+    "file": "tests/test_env_and_silent_defaults.py",
+    "sha256_normalized": "9cdb3e5ea3e2082d4a3920849e1da18a108f0f7d643a3ed2677cbae4ae5da9d8",
+    "matches_HEAD": true
+  },
+  {
+    "file": "tests/test_evaluate.py",
+    "sha256_normalized": "29eb502585073ddcf4461279ae2e26d74b9027c8af9cc989b50ff9c2f7f797e8",
+    "matches_HEAD": true
+  },
+  {
+    "file": "tests/test_masking.py",
+    "sha256_normalized": "b916f59b98a502f8952e6e0936313d50f51046a3b8ebfd5a8c13edaf460296e4",
+    "matches_HEAD": true
+  },
+  {
+    "file": "tests/test_modeling_and_train.py",
+    "sha256_normalized": "f840147930701b80cd548d359f940280d243c1567e8159f338c6b95b6a4f5fce",
+    "matches_HEAD": true
+  },
+  {
+    "file": "tests/test_repo_structure.py",
+    "sha256_normalized": "7f3d39a94aaf462b91464bc70b73664412c3d300fd4e845acc2840410e20f3cc",
+    "matches_HEAD": true
+  },
+  {
+    "file": "tests/test_report.py",
+    "sha256_normalized": "81aca7cda8b75a97478519a15046d4801d1232dc83388b7ea7117944a152b433",
+    "matches_HEAD": true
+  }
+]

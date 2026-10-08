@@ -1,0 +1,25 @@
+{
+  "finished_at_utc": "2026-10-08T03:47:14.247062+00:00",
+  "model_id": "unsloth/Qwen3.5-4B",
+  "recipe": {
+    "max_length": 256,
+    "mask_mode": "assistant-only",
+    "enable_thinking": false
+  },
+  "p95": 98,
+  "n_checked": 225,
+  "all_passed": true,
+  "old_default_rows_differ": 225,
+  "total_tokens": 20951,
+  "supervised_tokens": 8564,
+  "supervised_fraction": 0.40876330485418355,
+  "training_dataset_sha256": "3b0c8a451ee2e31daab7c76f4e9ea43b5b8a7cb49f2b41df95ffccc3f923242e",
+  "packages": {
+    "torch": "2.11.0+cu130",
+    "transformers": "5.18.0",
+    "tokenizers": "0.23.2",
+    "trl": "1.14.2",
+    "datasets": "5.1.0"
+  },
+  "sft_trainer_executed": false
+}

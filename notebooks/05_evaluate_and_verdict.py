@@ -17,6 +17,7 @@ sys.path.insert(0, str(pathlib.Path.cwd().parent / "src"))
 
 from labkit import evaluate as ev, generate, report
 from labkit.config import get_tier
+from labkit.integrity import require_frozen_baselines
 
 ROOT = pathlib.Path.cwd() if (pathlib.Path.cwd() / "data").exists() else pathlib.Path.cwd().parent
 TIER = get_tier(os.environ.get("COMPUTE_TIER", "T4"))
@@ -32,7 +33,8 @@ EVAL_LIMIT = int(os.environ.get("EVAL_LIMIT", "0"))
 if EVAL_LIMIT:
     target, regression = target[:EVAL_LIMIT], regression[:EVAL_LIMIT]
 
-frozen = json.loads((ROOT / "results" / "baselines_frozen.json").read_text(encoding="utf-8"))
+frozen = require_frozen_baselines(ROOT, TIER.model_id)
+baseline_predictions = json.loads((ROOT / "results/baseline_predictions.json").read_text(encoding="utf-8"))
 base_b = ev.GroupScores(**{k: v for k, v in frozen["baseline_b"].items() if k != "extra"})
 base_a = ev.GroupScores(**{k: v for k, v in frozen["baseline_a"].items() if k != "extra"})
 
@@ -95,6 +97,16 @@ def score_adapter(adapter_dir: pathlib.Path, system_prompt: str | None, *,
 scores_ft, preds_ft, rpreds_ft = score_adapter(ROOT / "adapters" / "correct",
                                                generate.NAIVE_PROMPT)
 print("fine-tune:", scores_ft.as_dict())
+adapter_predictions = {
+    "model": TIER.model_id,
+    "correct": {
+        "target": [{"input": r["input"], "label": r["label"], "prediction": p}
+                   for r, p in zip(target, preds_ft)],
+        "regression": [{"instruction": r["instruction"], "keywords": r["keywords"], "prediction": p}
+                       for r, p in zip(regression, rpreds_ft)],
+    },
+}
+report.write_json(adapter_predictions, "adapter_predictions.json", results_dir=ROOT / "results")
 
 # %% [markdown]
 # ## 2. Bảng so sánh ba baseline
@@ -161,12 +173,17 @@ for key in CONTRAST_KEYS:
     if not adir.exists():
         print(f"skip {key}: {adir} chưa có — chạy NB4 trước")
         continue
-    s_k, _, _ = score_adapter(adir, generate.NAIVE_PROMPT,
+    s_k, p_k, _ = score_adapter(adir, generate.NAIVE_PROMPT,
                               load_in_4bit=SPECS[key].load_in_4bit,
                               with_regression=False, label=key)
     autopsy.append({"run": key, "target": round(s_k.target, 4),
                     "format": round(s_k.format, 4),
                     "latency_ms": round(s_k.latency_ms, 1), "n": s_k.n})
+    adapter_predictions[key] = {
+        "target": [{"input": r["input"], "label": r["label"], "prediction": p}
+                   for r, p in zip(target, p_k)],
+    }
+    report.write_json(adapter_predictions, "adapter_predictions.json", results_dir=ROOT / "results")
     print(f"{key}: target={s_k.target:.3f}  format={s_k.format:.3f}")
 
 print()
@@ -189,8 +206,15 @@ report.write_json(autopsy, "autopsy.json", results_dir=ROOT / "results")
 rows = []
 for i, (p, r) in enumerate(zip(preds_ft, target)):
     s_ft = ev.triage_field_accuracy(p, r["label"])
+    base = baseline_predictions["target"][i]
+    assert base["input"] == r["input"] and base["label"] == r["label"]
+    s_b = ev.triage_field_accuracy(base["baseline_b"], r["label"])
     rows.append({"i": i, "ticket": r["input"][:70], "ft_score": round(s_ft, 2),
-                 "ft_pred": p.replace("\n", " ")[:90]})
+                 "ft_pred": p.replace("\n", " ")[:90], "input": r["input"],
+                 "label": r["label"], "ft_prediction": p,
+                 "baseline_b_prediction": base["baseline_b"], "baseline_b_score": s_b,
+                 "delta_vs_b": s_ft - s_b,
+                 "outcome_vs_b": "loss" if s_ft < s_b else "win" if s_ft > s_b else "tie"})
 rows.sort(key=lambda x: x["ft_score"])
 print("--- 3 ca TỆ NHẤT (bắt buộc đưa vào report) ---")
 print(report.markdown_table(rows[:3], ["i", "ticket", "ft_score", "ft_pred"]))

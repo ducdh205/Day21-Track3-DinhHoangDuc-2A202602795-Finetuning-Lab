@@ -1,0 +1,153 @@
+target=50  regression=15  tier=T4
+Tesla T4 (cuda, sm_75, 14.6 GB) -> precision=fp16
+  note: this GPU predates Ampere, so it has NO bfloat16. Using fp16 with gradient scaling instead. Tutorials that hardcode bf16=True fail here.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+Fetching 2 files:  50%|█████     | 1/2 [06:10<06:10, 370.51s/it]
+Fetching 2 files: 100%|██████████| 2/2 [06:16<00:00, 156.32s/it]
+Fetching 2 files: 100%|██████████| 2/2 [06:16<00:00, 188.45s/it]
+
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/426 [00:10<1:11:35, 10.11s/it]
+Loading weights:  23%|██▎       | 99/426 [00:10<00:23, 13.75it/s] 
+Loading weights:  46%|████▌     | 196/426 [00:15<00:13, 16.68it/s]
+Loading weights:  56%|█████▌    | 237/426 [00:18<00:11, 15.96it/s]
+Loading weights:  61%|██████    | 260/426 [00:20<00:11, 14.69it/s]
+Loading weights:  65%|██████▍   | 275/426 [00:20<00:09, 15.80it/s]
+Loading weights:  67%|██████▋   | 286/426 [00:21<00:08, 15.60it/s]
+Loading weights:  69%|██████▉   | 294/426 [00:22<00:09, 14.27it/s]
+Loading weights:  71%|███████   | 302/426 [00:22<00:07, 15.93it/s]
+Loading weights:  72%|███████▏  | 308/426 [00:23<00:08, 13.97it/s]
+Loading weights:  73%|███████▎  | 312/426 [00:23<00:08, 13.07it/s]
+Loading weights:  74%|███████▍  | 316/426 [00:23<00:07, 14.36it/s]
+Loading weights:  75%|███████▌  | 320/426 [00:24<00:07, 14.79it/s]
+Loading weights:  77%|███████▋  | 326/426 [00:24<00:05, 17.77it/s]
+Loading weights:  77%|███████▋  | 330/426 [00:24<00:06, 15.47it/s]
+Loading weights:  78%|███████▊  | 333/426 [00:25<00:07, 13.23it/s]
+Loading weights:  80%|███████▉  | 340/426 [00:25<00:04, 18.57it/s]
+Loading weights:  81%|████████  | 344/426 [00:25<00:05, 15.15it/s]
+Loading weights:  81%|████████▏ | 347/426 [00:25<00:06, 12.90it/s]
+Loading weights:  83%|████████▎ | 355/426 [00:26<00:03, 19.09it/s]
+Loading weights:  84%|████████▍ | 358/426 [00:26<00:04, 14.92it/s]
+Loading weights:  85%|████████▍ | 361/426 [00:26<00:05, 12.64it/s]
+Loading weights:  85%|████████▌ | 364/426 [00:27<00:05, 11.16it/s]
+Loading weights:  87%|████████▋ | 369/426 [00:27<00:04, 14.03it/s]
+Loading weights:  87%|████████▋ | 371/426 [00:27<00:04, 12.91it/s]
+Loading weights:  89%|████████▉ | 379/426 [00:27<00:02, 20.59it/s]
+Loading weights:  90%|████████▉ | 382/426 [00:27<00:02, 19.99it/s]
+Loading weights:  90%|█████████ | 385/426 [00:28<00:03, 12.00it/s]
+Loading weights:  92%|█████████▏| 393/426 [00:28<00:01, 19.77it/s]
+Loading weights:  93%|█████████▎| 397/426 [00:29<00:01, 15.23it/s]
+Loading weights:  94%|█████████▍| 400/426 [00:29<00:02, 12.74it/s]
+Loading weights:  96%|█████████▌| 408/426 [00:29<00:00, 19.03it/s]
+Loading weights:  97%|█████████▋| 412/426 [00:30<00:01, 13.57it/s]
+Loading weights:  97%|█████████▋| 415/426 [00:30<00:00, 11.77it/s]
+Loading weights:  98%|█████████▊| 417/426 [00:31<00:00,  9.14it/s]
+Loading weights:  99%|█████████▉| 422/426 [00:31<00:00, 11.61it/s]
+Loading weights: 100%|█████████▉| 424/426 [00:31<00:00, 11.96it/s]
+Loading weights: 100%|██████████| 426/426 [00:31<00:00, 13.56it/s]
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+[transformers] `causal_conv1d_update` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `fused_recurrent_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+  [(a) base + naive prompt/target] batch 1/13     15s elapsed  ~  181s left
+  [(a) base + naive prompt/target] batch 2/13     27s elapsed  ~  149s left
+  [(a) base + naive prompt/target] batch 3/13     39s elapsed  ~  131s left
+  [(a) base + naive prompt/target] batch 4/13     51s elapsed  ~  115s left
+  [(a) base + naive prompt/target] batch 5/13     63s elapsed  ~  101s left
+  [(a) base + naive prompt/target] batch 6/13     75s elapsed  ~   88s left
+  [(a) base + naive prompt/target] batch 7/13     87s elapsed  ~   75s left
+  [(a) base + naive prompt/target] batch 8/13    100s elapsed  ~   62s left
+  [(a) base + naive prompt/target] batch 9/13    111s elapsed  ~   50s left
+  [(a) base + naive prompt/target] batch 10/13    123s elapsed  ~   37s left
+  [(a) base + naive prompt/target] batch 11/13    135s elapsed  ~   25s left
+  [(a) base + naive prompt/target] batch 12/13    147s elapsed  ~   12s left
+  [(a) base + naive prompt/target] batch 13/13    159s elapsed  ~    0s left
+  [(a) base + naive prompt/target] done: 50 prompts in 159s
+  [(a) base + naive prompt/regression] batch 1/4      5s elapsed  ~   16s left
+  [(a) base + naive prompt/regression] batch 2/4     12s elapsed  ~   12s left
+  [(a) base + naive prompt/regression] batch 3/4     19s elapsed  ~    6s left
+  [(a) base + naive prompt/regression] batch 4/4     27s elapsed  ~    0s left
+  [(a) base + naive prompt/regression] done: 15 prompts in 27s
+(a) base + naive prompt      target=0.000  regression=0.791  format=0.000  3182ms
+  [(b) base + optimized prompt/target] batch 1/13      6s elapsed  ~   70s left
+  [(b) base + optimized prompt/target] batch 2/13     12s elapsed  ~   64s left
+  [(b) base + optimized prompt/target] batch 3/13     17s elapsed  ~   56s left
+  [(b) base + optimized prompt/target] batch 4/13     22s elapsed  ~   50s left
+  [(b) base + optimized prompt/target] batch 5/13     28s elapsed  ~   44s left
+  [(b) base + optimized prompt/target] batch 6/13     33s elapsed  ~   38s left
+  [(b) base + optimized prompt/target] batch 7/13     39s elapsed  ~   33s left
+  [(b) base + optimized prompt/target] batch 8/13     44s elapsed  ~   28s left
+  [(b) base + optimized prompt/target] batch 9/13     50s elapsed  ~   22s left
+  [(b) base + optimized prompt/target] batch 10/13     55s elapsed  ~   17s left
+  [(b) base + optimized prompt/target] batch 11/13     61s elapsed  ~   11s left
+  [(b) base + optimized prompt/target] batch 12/13     66s elapsed  ~    6s left
+  [(b) base + optimized prompt/target] batch 13/13     71s elapsed  ~    0s left
+  [(b) base + optimized prompt/target] done: 50 prompts in 71s
+  [(b) base + optimized prompt/regression] batch 1/4      5s elapsed  ~   16s left
+  [(b) base + optimized prompt/regression] batch 2/4     12s elapsed  ~   12s left
+  [(b) base + optimized prompt/regression] batch 3/4     20s elapsed  ~    7s left
+  [(b) base + optimized prompt/regression] batch 4/4     27s elapsed  ~    0s left
+  [(b) base + optimized prompt/regression] done: 15 prompts in 27s
+(b) base + optimized prompt  target=0.850  regression=0.791  format=1.000  1413ms
+{
+  "tier": "T4",
+  "model": "unsloth/Qwen3.5-4B",
+  "baseline_a": {
+    "target": 0.0,
+    "regression": 0.7911111111111111,
+    "format": 0.0,
+    "latency_ms": 3181.527480159984,
+    "n": 50,
+    "extra": {}
+  },
+  "baseline_b": {
+    "target": 0.85,
+    "regression": 0.7911111111111111,
+    "format": 1.0,
+    "latency_ms": 1412.6502093799988,
+    "n": 50,
+    "extra": {}
+  },
+  "optimized_prompt_sha": "4f9ca3c2c36b3c10",
+  "n_target": 50,
+  "n_regression": 15,
+  "eval_limit": null,
+  "smoke_mode": false,
+  "started_at_utc": "2026-10-08T03:47:15.341980+00:00",
+  "finished_at_utc": "2026-10-08T03:58:58.499465+00:00",
+  "elapsed_seconds": 703.157,
+  "measured_before_training": true,
+  "eval_checksums_sha256": {
+    "eval_target.jsonl": "2991050fefb848c8bf3fdbc021badea9500f758d90717d7a94ae2f9b09b8915e",
+    "eval_regression.jsonl": "9c6ba90ea86e28fbc7102bf4cc4cb1e23c4668cf95bfcae55c3c114d34dc133b"
+  },
+  "checksum_convention": "sha256 with CRLF normalized to LF",
+  "naive_prompt": "Phân loại ticket sau.",
+  "optimized_prompt": "Bạn là hệ thống phân loại ticket CSKH. Trả về DUY NHẤT một object JSON, không kèm giải thích, không kèm markdown fence.\n\nSchema bắt buộc — đúng 4 khóa:\n{\"intent\": ..., \"urgency\": ..., \"product\": ..., \"sentiment\": ...}\n\nintent    ∈ doi_tra | van_chuyen | hoan_tien | san_pham_loi | hoi_thong_tin\nurgency   ∈ cao | trung_binh | thap\nsentiment ∈ tieu_cuc | trung_tinh | tich_cuc\nproduct   = tên sản phẩm xuất hiện nguyên văn trong ticket\n\nVí dụ:\nTicket: \"Shop ơi, mình đặt bàn phím cơ mã đơn DH123456. Giao hàng chậm. Đã 3 ngày rồi. Nhờ shop kiểm tra.\"\nJSON: {\"intent\": \"van_chuyen\", \"urgency\": \"trung_binh\", \"product\": \"bàn phím cơ\", \"sentiment\": \"trung_tinh\"}\n\nHướng dẫn: phân loại độc lập từng trường. Sản phẩm lỗi thuộc san_pham_loi;\nyêu cầu đổi hoặc trả hàng thuộc doi_tra; yêu cầu trả lại tiền thuộc hoan_tien.\nKhông suy diễn urgency từ sentiment: một khách bực mình vẫn có thể không vội.\nSao chép đúng tên sản phẩm, không đưa mã đơn vào product.\n\nCác ví dụ bổ sung dưới đây lấy từ tập train (split seed 42), không lấy từ eval:\nTicket: \"Shop ơi, mình đặt tai nghe bluetooth mã đơn VN847706. Sai màu. Đã 3 ngày rồi. Bực mình.\"\nJSON: {\"intent\": \"san_pham_loi\", \"urgency\": \"trung_binh\", \"product\": \"tai nghe bluetooth\", \"sentiment\": \"tieu_cuc\"}\nTicket: \"Alo shop, mình đặt nồi chiên không dầu mã đơn DH630832. Bảo hành bao lâu. Đã 3 ngày rồi. Shop xem giúp.\"\nJSON: {\"intent\": \"hoi_thong_tin\", \"urgency\": \"trung_binh\", \"product\": \"nồi chiên không dầu\", \"sentiment\": \"trung_tinh\"}\nTicket: \"Alo shop, mình đặt đèn bàn LED mã đơn VN661768. Shipper không gọi. Khi nào tiện. Lần cuối mua ở đây.\"\nJSON: {\"intent\": \"van_chuyen\", \"urgency\": \"thap\", \"product\": \"đèn bàn LED\", \"sentiment\": \"tieu_cuc\"}\nTicket: \"Shop ơi, mình đặt chuột không dây mã đơn DH645694. Trả lại tiền. Gấp. Shop hỗ trợ tốt.\"\nJSON: {\"intent\": \"hoan_tien\", \"urgency\": \"cao\", \"product\": \"chuột không dây\", \"sentiment\": \"tich_cuc\"}\nTicket: \"Alo shop, mình đặt áo khoác gió mã đơn VN157511. Muốn đổi. Không vội. Mình vẫn tin tưởng shop.\"\nJSON: {\"intent\": \"doi_tra\", \"urgency\": \"thap\", \"product\": \"áo khoác gió\", \"sentiment\": \"tich_cuc\"}\n\nÁp dụng schema cho ticket mới của người dùng. Chỉ xuất object JSON của ticket mới.",
+  "optimized_prompt_sha256": "4f9ca3c2c36b3c108235a971e99971644c563cc34db57460324fa3e703503a38",
+  "hardware": {
+    "device": "cuda",
+    "name": "Tesla T4",
+    "bf16": false,
+    "fp16": true,
+    "capability": "7.5",
+    "vram_gb": 14.6
+  },
+  "precision": "fp16",
+  "generation": {
+    "do_sample": false,
+    "enable_thinking": false,
+    "batch_size": 4,
+    "target_max_new_tokens": 160,
+    "regression_max_new_tokens": 96
+  },
+  "model_revision": null,
+  "packages": {
+    "transformers": "5.18.0",
+    "tokenizers": "0.23.2"
+  },
+  "predictions_sha256": "267e7001b660da9f9a3a8b52e18d303f46d8dbb5a56a0de0d78a6086e2fcdd7a",
+  "frozen_at_utc": "2026-10-08T03:58:58.506695+00:00"
+}

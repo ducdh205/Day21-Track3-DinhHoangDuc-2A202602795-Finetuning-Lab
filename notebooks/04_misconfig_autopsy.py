@@ -27,9 +27,13 @@ sys.path.insert(0, str(pathlib.Path.cwd().parent / "src"))
 
 from labkit import data, generate, modeling, report, train
 from labkit.config import CONTRAST_KEYS, SPECS, get_tier, training_epochs
+from labkit.integrity import require_frozen_baselines
 
 ROOT = pathlib.Path.cwd() if (pathlib.Path.cwd() / "data").exists() else pathlib.Path.cwd().parent
 TIER = get_tier(os.environ.get("COMPUTE_TIER", "T4"))
+require_frozen_baselines(ROOT, TIER.model_id)
+TIER, MASK_RECIPE = train.nb1_training_recipe(ROOT, TIER)
+assert os.environ.get("MASK_MODE", "assistant-only") == MASK_RECIPE["mask_mode"], "Re-run NB1 for this mask"
 
 from datasets import Dataset
 
@@ -66,10 +70,10 @@ def run_contrast(key: str) -> dict:
     spec = SPECS[key]
     global train_ds
     model, tok = generate.load_base(TIER, load_in_4bit=spec.load_in_4bit)
+    train.nb1_training_recipe(ROOT, TIER, tok)
     if train_ds is None:
         train_ds = Dataset.from_list(
-            data.to_training_dataset(tok, train_rows, max_length=TIER.max_length,
-                                     mask_mode=os.environ.get("MASK_MODE", "assistant-only")))
+            data.to_training_dataset(tok, train_rows, **MASK_RECIPE))
         print("  train_ds:", train_ds)
     targets = modeling.resolve_target_modules(model, spec.target)
 
@@ -92,6 +96,8 @@ def run_contrast(key: str) -> dict:
     trainer = SFTTrainer(model=model, args=SFTConfig(**sft_kwargs),
                          train_dataset=train_ds, processing_class=tok,
                          peft_config=LoraConfig(**lora_kwargs))
+    batch_proof = train.verify_trainer_mask(trainer, list(train_ds), tok)
+    report.write_json(batch_proof, f"training_batch_{key}.json", results_dir=ROOT / "results")
     # Without this the `qlora` run dies at step 0: TRL hands back bf16 LoRA weights and
     # fp16's GradScaler has no BFloat16 kernel. See F-23 / scripts/probe_precision.py.
     fix = train.align_trainable_precision(trainer.model)
@@ -109,8 +115,13 @@ def run_contrast(key: str) -> dict:
     row = train.summarize_run(spec, TIER, targets, trainable, elapsed, generate.peak_vram_gb())
     row["final_loss"] = round(res.training_loss, 4)
     row["max_steps"] = max_steps
+    row["actual_steps"] = trainer.state.global_step
+    row["mask_mode"] = MASK_RECIPE["mask_mode"]
+    row["max_length"] = TIER.max_length
+    row["enable_thinking"] = MASK_RECIPE["enable_thinking"]
     row["teaches"] = spec.teaches
     report.append_row(row, results_dir=ROOT / "results")
+    assert trainer.state.global_step == max_steps, "Actual training step budget differs"
 
     del trainer, model
     generate.free_memory()

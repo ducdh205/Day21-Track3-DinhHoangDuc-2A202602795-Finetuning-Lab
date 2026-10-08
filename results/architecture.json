@@ -1,0 +1,12 @@
+{
+  "model_id": "unsloth/Qwen3.5-4B",
+  "layer_types": {
+    "num_hidden_layers": 32,
+    "full_attention_interval": 4,
+    "linear_num_key_heads": 16,
+    "layer_types": {
+      "linear_attention": 24,
+      "full_attention": 8
+    }
+  }
+}

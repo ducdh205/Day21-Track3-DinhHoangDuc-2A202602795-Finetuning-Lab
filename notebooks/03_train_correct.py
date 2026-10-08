@@ -34,9 +34,12 @@ sys.path.insert(0, str(pathlib.Path.cwd().parent / "src"))
 
 from labkit import data, device, generate, modeling, report, train
 from labkit.config import SPECS, get_tier, training_epochs
+from labkit.integrity import require_frozen_baselines
 
 ROOT = pathlib.Path.cwd() if (pathlib.Path.cwd() / "data").exists() else pathlib.Path.cwd().parent
 TIER = get_tier(os.environ.get("COMPUTE_TIER", "T4"))
+require_frozen_baselines(ROOT, TIER.model_id)
+TIER, MASK_RECIPE = train.nb1_training_recipe(ROOT, TIER)
 SPEC = SPECS["correct"]
 print(f"{TIER.name} · {TIER.model_id} · {SPEC.label}")
 print(device.banner())      # which precision is ACTUALLY being used, and why
@@ -49,7 +52,11 @@ print(device.banner())      # which precision is ACTUALLY being used, and why
 
 # %%
 model, tok = generate.load_base(TIER, load_in_4bit=SPEC.load_in_4bit)
-print(json.dumps(modeling.layer_type_summary(model.config), ensure_ascii=False, indent=2))
+TIER, MASK_RECIPE = train.nb1_training_recipe(ROOT, TIER, tok)
+architecture = modeling.layer_type_summary(model.config)
+print(json.dumps(architecture, ensure_ascii=False, indent=2))
+report.write_json({"model_id": TIER.model_id, "layer_types": architecture},
+                  "architecture.json", results_dir=ROOT / "results")
 
 # %% [markdown]
 # ## 2. `all-linear` — nhưng không phải *mọi* linear
@@ -83,6 +90,7 @@ def load_jsonl(p):
 
 train_rows = load_jsonl(split_dir / "train.jsonl")
 MASK_MODE = os.environ.get("MASK_MODE", "assistant-only")
+assert MASK_MODE == MASK_RECIPE["mask_mode"], "MASK_MODE differs from NB1 — prove it again"
 
 # Train on the mask you PROVED in NB1 — not on a library flag.
 #
@@ -92,8 +100,7 @@ MASK_MODE = os.environ.get("MASK_MODE", "assistant-only")
 # covers the empty <think> block — neither is the mask NB1 proved. And a pipeline that
 # reads the tokenizer's mask directly gets ZERO tokens with only a warning.
 # Check it yourself:  python scripts/check_mask_agreement.py
-rows = data.to_training_dataset(tok, train_rows, max_length=TIER.max_length,
-                                mask_mode=MASK_MODE)
+rows = data.to_training_dataset(tok, train_rows, **MASK_RECIPE)
 train_ds = Dataset.from_list(rows)
 sup = sum(sum(1 for x in r["labels"] if x != data.IGNORE_INDEX) for r in rows)
 tot = sum(len(r["labels"]) for r in rows)
@@ -120,7 +127,7 @@ print(f"epochs={EPOCHS}  ->  {STEPS} optimizer steps  (NB4 runs its contrasts at
 want_sft = train.sft_config_kwargs(
     TIER, SPEC, output_dir=str(ROOT / "adapters" / SPEC.key),
     num_train_epochs=EPOCHS, mask_mode=MASK_MODE,
-    total_steps=STEPS,
+    max_steps=STEPS,
 )
 sft_kwargs, dropped = train.filter_kwargs(SFTConfig, want_sft, label="SFTConfig")
 if dropped:
@@ -143,6 +150,8 @@ trainer = SFTTrainer(
     processing_class=tok,          # NOT tokenizer= — removed in TRL v1
     peft_config=LoraConfig(**lora_kwargs),
 )
+batch_proof = train.verify_trainer_mask(trainer, rows, tok)
+report.write_json(batch_proof, "training_batch_correct.json", results_dir=ROOT / "results")
 
 # TRL casts LoRA weights to bf16 regardless of the device or the fp16 flag it was
 # handed. fp16's GradScaler cannot unscale bf16 gradients -- see F-23 and
@@ -169,10 +178,14 @@ print("saved ->", out)
 row = train.summarize_run(SPEC, TIER, targets, trainable, elapsed, generate.peak_vram_gb())
 row["final_loss"] = round(result.training_loss, 4)
 row["mask_mode"] = MASK_MODE
+row["max_length"] = TIER.max_length
+row["enable_thinking"] = MASK_RECIPE["enable_thinking"]
+row["actual_steps"] = trainer.state.global_step
 # Record the step budget so NB5/verify can CHECK that the four runs are comparable,
 # instead of trusting that they were configured the same way.
 row["max_steps"] = STEPS
 report.append_row(row, results_dir=ROOT / "results")
+assert trainer.state.global_step == STEPS, "Actual training step budget differs"
 print(json.dumps(row, ensure_ascii=False, indent=2))
 
 # %% [markdown]

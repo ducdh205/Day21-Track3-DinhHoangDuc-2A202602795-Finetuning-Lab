@@ -23,11 +23,47 @@ import dataclasses
 import inspect
 import math
 import warnings
+import hashlib
+import json
+from pathlib import Path
 
 from . import device
 from .config import MAX_EFFECTIVE_BATCH, LoraSpec, Tier
 
 WARMUP_FRACTION = 0.1
+
+
+def nb1_training_recipe(root: Path, tier: Tier, tokenizer=None) -> tuple[Tier, dict]:
+    """Use the measured length and render settings actually proved by NB1."""
+    from . import data
+
+    result_dir = root / "results"
+    proof = json.loads((result_dir / "mask_proof.json").read_text(encoding="utf-8"))
+    stats = json.loads((result_dir / "token_stats.json").read_text(encoding="utf-8"))
+    run = json.loads((result_dir / "nb1_run.json").read_text(encoding="utf-8"))
+    if any(doc.get("model_id") != tier.model_id for doc in (proof, stats, run)):
+        raise ValueError("Base model changed — re-run NB1 and check_mask_agreement.py.")
+    length = stats["selected_max_length"]
+    if length != stats["suggested_max_length"] or length != proof["max_length"]:
+        raise ValueError("NB1 max_length differs from its measured p95 recipe.")
+    if proof.get("enable_thinking") != stats.get("enable_thinking"):
+        raise ValueError("NB1 thinking settings disagree.")
+    if not (proof.get("answer_is_supervised") and proof.get("question_is_masked")
+            and proof.get("supervised_equals_rendered_answer_tail")
+            and 0 < proof.get("supervised_fraction", 0) < 0.95):
+        raise ValueError("NB1 loss mask has not been proved.")
+    recipe = {"max_length": length, "mask_mode": proof["mask_mode"],
+              "enable_thinking": proof["enable_thinking"]}
+    if tokenizer is not None:
+        template_sha = hashlib.sha256(tokenizer.chat_template.encode()).hexdigest()
+        if template_sha != run["chat_template_sha256"]:
+            raise ValueError("Chat template changed — re-run NB1 before training.")
+        with (root / "data/train_seed.jsonl").open(encoding="utf-8") as fh:
+            sample = json.loads(next(line for line in fh if line.strip()))
+        example = data.build_example(tokenizer, data.to_messages(sample), **recipe)
+        if example.input_ids != proof["input_ids"] or example.labels != proof["labels"]:
+            raise ValueError("Training token IDs/labels differ from NB1's saved proof.")
+    return dataclasses.replace(tier, max_length=length), recipe
 
 
 def planned_steps(n_examples: int, tier: Tier, epochs: float) -> int:
@@ -41,6 +77,32 @@ def planned_steps(n_examples: int, tier: Tier, epochs: float) -> int:
     """
     per_epoch = math.ceil(n_examples / tier.effective_batch)
     return max(1, math.ceil(per_epoch * epochs))
+
+
+def verify_trainer_mask(trainer, expected_rows: list[dict], tokenizer) -> dict:
+    """Prove that TRL kept the pre-tokenized labels through its actual collator."""
+    from . import data
+
+    if len(trainer.train_dataset) != len(expected_rows):
+        raise ValueError("TRL changed the number of training examples.")
+    for actual, expected in zip(trainer.train_dataset, expected_rows):
+        if list(actual["input_ids"]) != expected["input_ids"] or list(actual["labels"]) != expected["labels"]:
+            raise ValueError("TRL changed NB1's token IDs or labels before training.")
+    batch = trainer.data_collator([trainer.train_dataset[0]])
+    ids, labels = batch["input_ids"][0].tolist(), batch["labels"][0].tolist()
+    expected = expected_rows[0]
+    n = len(expected["labels"])
+    if ids[:n] != expected["input_ids"] or labels[:n] != expected["labels"]:
+        raise ValueError("TRL's collator changed NB1's loss mask.")
+    if any(label != data.IGNORE_INDEX for label in labels[n:]):
+        raise ValueError("Padding entered the loss.")
+    text = tokenizer.decode([t for t, label in zip(ids, labels) if label != data.IGNORE_INDEX],
+                            skip_special_tokens=False)
+    print("--- ACTUAL TRAINING BATCH: labels != -100 ---")
+    print(text)
+    return {"all_dataset_labels_equal_nb1": True, "collator_labels_equal_nb1": True,
+            "n_checked": len(expected_rows), "input_ids": ids, "labels": labels,
+            "supervised_text": text}
 
 
 def _accepted_fields(cls) -> set[str]:

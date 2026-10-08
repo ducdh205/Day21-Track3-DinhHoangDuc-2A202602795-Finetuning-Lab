@@ -1,0 +1,21 @@
+﻿{
+    "measured_at_utc":  "2026-10-07T17:25:38.7618214Z",
+    "timezone":  "Asia/Saigon",
+    "computer":  {
+                     "TotalPhysicalMemory":  16852832256
+                 },
+    "gpu":  [
+                {
+                    "Name":  "Intel(R) Iris(R) Xe Graphics",
+                    "AdapterRAM":  1073741824
+                }
+            ],
+    "cpu":  {
+                "Name":  "11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz",
+                "NumberOfCores":  4,
+                "NumberOfLogicalProcessors":  8
+            },
+    "training_supported":  false,
+    "reason":  "Intel Iris Xe; no NVIDIA CUDA GPU",
+    "colab_mcp_status":  "Google sign-in rejected on automated browser"
+}

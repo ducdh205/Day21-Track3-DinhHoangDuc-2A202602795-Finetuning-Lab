@@ -2,3 +2,7 @@
 submission/evidence/nb1/*.jsonl -text whitespace=cr-at-eol
 # Console output is retained verbatim, including blank lines emitted by templates.
 submission/evidence/nb1/*.log -whitespace
+
+# Preserve measured artifacts byte-for-byte, including prediction checksums.
+results/** -text -whitespace
+data/split/*.jsonl -text whitespace=cr-at-eol

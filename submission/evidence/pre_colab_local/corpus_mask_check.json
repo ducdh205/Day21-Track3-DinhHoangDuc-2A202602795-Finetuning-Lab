@@ -1,0 +1,2259 @@
+{
+  "model_id": "unsloth/Qwen3.5-4B",
+  "max_length": 256,
+  "enable_thinking": false,
+  "n_checked": 250,
+  "all_passed": true,
+  "rows": [
+    {
+      "index": 0,
+      "n_total": 94,
+      "n_supervised": 37,
+      "supervised_fraction": 0.39361702127659576,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 1,
+      "n_total": 95,
+      "n_supervised": 40,
+      "supervised_fraction": 0.42105263157894735,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 2,
+      "n_total": 93,
+      "n_supervised": 39,
+      "supervised_fraction": 0.41935483870967744,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 3,
+      "n_total": 89,
+      "n_supervised": 35,
+      "supervised_fraction": 0.39325842696629215,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 4,
+      "n_total": 86,
+      "n_supervised": 35,
+      "supervised_fraction": 0.4069767441860465,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 5,
+      "n_total": 91,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4175824175824176,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 6,
+      "n_total": 90,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 7,
+      "n_total": 95,
+      "n_supervised": 37,
+      "supervised_fraction": 0.3894736842105263,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 8,
+      "n_total": 92,
+      "n_supervised": 39,
+      "supervised_fraction": 0.42391304347826086,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 9,
+      "n_total": 100,
+      "n_supervised": 41,
+      "supervised_fraction": 0.41,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 10,
+      "n_total": 96,
+      "n_supervised": 39,
+      "supervised_fraction": 0.40625,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 11,
+      "n_total": 89,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4044943820224719,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 12,
+      "n_total": 93,
+      "n_supervised": 36,
+      "supervised_fraction": 0.3870967741935484,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 13,
+      "n_total": 93,
+      "n_supervised": 37,
+      "supervised_fraction": 0.3978494623655914,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 14,
+      "n_total": 100,
+      "n_supervised": 43,
+      "supervised_fraction": 0.43,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 15,
+      "n_total": 98,
+      "n_supervised": 41,
+      "supervised_fraction": 0.41836734693877553,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 16,
+      "n_total": 93,
+      "n_supervised": 39,
+      "supervised_fraction": 0.41935483870967744,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 17,
+      "n_total": 95,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4105263157894737,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 18,
+      "n_total": 94,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4148936170212766,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 19,
+      "n_total": 93,
+      "n_supervised": 38,
+      "supervised_fraction": 0.40860215053763443,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 20,
+      "n_total": 91,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4175824175824176,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 21,
+      "n_total": 89,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4044943820224719,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 22,
+      "n_total": 89,
+      "n_supervised": 37,
+      "supervised_fraction": 0.4157303370786517,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 23,
+      "n_total": 93,
+      "n_supervised": 37,
+      "supervised_fraction": 0.3978494623655914,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 24,
+      "n_total": 94,
+      "n_supervised": 40,
+      "supervised_fraction": 0.425531914893617,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 25,
+      "n_total": 95,
+      "n_supervised": 37,
+      "supervised_fraction": 0.3894736842105263,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 26,
+      "n_total": 94,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4148936170212766,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 27,
+      "n_total": 94,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4148936170212766,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 28,
+      "n_total": 88,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4090909090909091,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 29,
+      "n_total": 92,
+      "n_supervised": 36,
+      "supervised_fraction": 0.391304347826087,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 30,
+      "n_total": 95,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 31,
+      "n_total": 95,
+      "n_supervised": 37,
+      "supervised_fraction": 0.3894736842105263,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 32,
+      "n_total": 96,
+      "n_supervised": 42,
+      "supervised_fraction": 0.4375,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 33,
+      "n_total": 95,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4105263157894737,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 34,
+      "n_total": 85,
+      "n_supervised": 34,
+      "supervised_fraction": 0.4,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 35,
+      "n_total": 93,
+      "n_supervised": 36,
+      "supervised_fraction": 0.3870967741935484,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 36,
+      "n_total": 91,
+      "n_supervised": 37,
+      "supervised_fraction": 0.4065934065934066,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 37,
+      "n_total": 97,
+      "n_supervised": 38,
+      "supervised_fraction": 0.3917525773195876,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 38,
+      "n_total": 90,
+      "n_supervised": 37,
+      "supervised_fraction": 0.4111111111111111,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 39,
+      "n_total": 91,
+      "n_supervised": 35,
+      "supervised_fraction": 0.38461538461538464,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 40,
+      "n_total": 87,
+      "n_supervised": 35,
+      "supervised_fraction": 0.40229885057471265,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 41,
+      "n_total": 89,
+      "n_supervised": 35,
+      "supervised_fraction": 0.39325842696629215,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 42,
+      "n_total": 95,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 43,
+      "n_total": 91,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4175824175824176,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 44,
+      "n_total": 94,
+      "n_supervised": 40,
+      "supervised_fraction": 0.425531914893617,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 45,
+      "n_total": 90,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4222222222222222,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 46,
+      "n_total": 90,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4222222222222222,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 47,
+      "n_total": 97,
+      "n_supervised": 41,
+      "supervised_fraction": 0.422680412371134,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 48,
+      "n_total": 90,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4222222222222222,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 49,
+      "n_total": 95,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 50,
+      "n_total": 91,
+      "n_supervised": 35,
+      "supervised_fraction": 0.38461538461538464,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 51,
+      "n_total": 96,
+      "n_supervised": 39,
+      "supervised_fraction": 0.40625,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 52,
+      "n_total": 92,
+      "n_supervised": 37,
+      "supervised_fraction": 0.40217391304347827,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 53,
+      "n_total": 92,
+      "n_supervised": 35,
+      "supervised_fraction": 0.3804347826086957,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 54,
+      "n_total": 91,
+      "n_supervised": 37,
+      "supervised_fraction": 0.4065934065934066,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 55,
+      "n_total": 87,
+      "n_supervised": 35,
+      "supervised_fraction": 0.40229885057471265,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 56,
+      "n_total": 92,
+      "n_supervised": 39,
+      "supervised_fraction": 0.42391304347826086,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 57,
+      "n_total": 92,
+      "n_supervised": 39,
+      "supervised_fraction": 0.42391304347826086,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 58,
+      "n_total": 95,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4105263157894737,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 59,
+      "n_total": 97,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4020618556701031,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 60,
+      "n_total": 101,
+      "n_supervised": 40,
+      "supervised_fraction": 0.39603960396039606,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 61,
+      "n_total": 90,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 62,
+      "n_total": 95,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4105263157894737,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 63,
+      "n_total": 94,
+      "n_supervised": 40,
+      "supervised_fraction": 0.425531914893617,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 64,
+      "n_total": 93,
+      "n_supervised": 38,
+      "supervised_fraction": 0.40860215053763443,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 65,
+      "n_total": 100,
+      "n_supervised": 41,
+      "supervised_fraction": 0.41,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 66,
+      "n_total": 91,
+      "n_supervised": 36,
+      "supervised_fraction": 0.3956043956043956,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 67,
+      "n_total": 97,
+      "n_supervised": 40,
+      "supervised_fraction": 0.41237113402061853,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 68,
+      "n_total": 92,
+      "n_supervised": 39,
+      "supervised_fraction": 0.42391304347826086,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 69,
+      "n_total": 90,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 70,
+      "n_total": 90,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 71,
+      "n_total": 98,
+      "n_supervised": 40,
+      "supervised_fraction": 0.40816326530612246,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 72,
+      "n_total": 94,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4148936170212766,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 73,
+      "n_total": 95,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 74,
+      "n_total": 93,
+      "n_supervised": 38,
+      "supervised_fraction": 0.40860215053763443,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 75,
+      "n_total": 90,
+      "n_supervised": 37,
+      "supervised_fraction": 0.4111111111111111,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 76,
+      "n_total": 95,
+      "n_supervised": 40,
+      "supervised_fraction": 0.42105263157894735,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 77,
+      "n_total": 90,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 78,
+      "n_total": 89,
+      "n_supervised": 35,
+      "supervised_fraction": 0.39325842696629215,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 79,
+      "n_total": 97,
+      "n_supervised": 42,
+      "supervised_fraction": 0.4329896907216495,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 80,
+      "n_total": 89,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4044943820224719,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 81,
+      "n_total": 95,
+      "n_supervised": 41,
+      "supervised_fraction": 0.43157894736842106,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 82,
+      "n_total": 90,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 83,
+      "n_total": 94,
+      "n_supervised": 38,
+      "supervised_fraction": 0.40425531914893614,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 84,
+      "n_total": 95,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 85,
+      "n_total": 92,
+      "n_supervised": 36,
+      "supervised_fraction": 0.391304347826087,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 86,
+      "n_total": 93,
+      "n_supervised": 37,
+      "supervised_fraction": 0.3978494623655914,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 87,
+      "n_total": 96,
+      "n_supervised": 38,
+      "supervised_fraction": 0.3958333333333333,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 88,
+      "n_total": 92,
+      "n_supervised": 39,
+      "supervised_fraction": 0.42391304347826086,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 89,
+      "n_total": 94,
+      "n_supervised": 37,
+      "supervised_fraction": 0.39361702127659576,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 90,
+      "n_total": 93,
+      "n_supervised": 39,
+      "supervised_fraction": 0.41935483870967744,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 91,
+      "n_total": 91,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4175824175824176,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 92,
+      "n_total": 86,
+      "n_supervised": 34,
+      "supervised_fraction": 0.3953488372093023,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 93,
+      "n_total": 89,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4044943820224719,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 94,
+      "n_total": 91,
+      "n_supervised": 36,
+      "supervised_fraction": 0.3956043956043956,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 95,
+      "n_total": 95,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4105263157894737,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 96,
+      "n_total": 92,
+      "n_supervised": 39,
+      "supervised_fraction": 0.42391304347826086,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 97,
+      "n_total": 95,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4105263157894737,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 98,
+      "n_total": 101,
+      "n_supervised": 43,
+      "supervised_fraction": 0.42574257425742573,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 99,
+      "n_total": 94,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4148936170212766,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 100,
+      "n_total": 98,
+      "n_supervised": 41,
+      "supervised_fraction": 0.41836734693877553,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 101,
+      "n_total": 91,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4175824175824176,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 102,
+      "n_total": 94,
+      "n_supervised": 38,
+      "supervised_fraction": 0.40425531914893614,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 103,
+      "n_total": 96,
+      "n_supervised": 42,
+      "supervised_fraction": 0.4375,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 104,
+      "n_total": 93,
+      "n_supervised": 39,
+      "supervised_fraction": 0.41935483870967744,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 105,
+      "n_total": 88,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4090909090909091,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 106,
+      "n_total": 98,
+      "n_supervised": 42,
+      "supervised_fraction": 0.42857142857142855,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 107,
+      "n_total": 97,
+      "n_supervised": 41,
+      "supervised_fraction": 0.422680412371134,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 108,
+      "n_total": 89,
+      "n_supervised": 34,
+      "supervised_fraction": 0.38202247191011235,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 109,
+      "n_total": 96,
+      "n_supervised": 39,
+      "supervised_fraction": 0.40625,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 110,
+      "n_total": 91,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4175824175824176,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 111,
+      "n_total": 91,
+      "n_supervised": 36,
+      "supervised_fraction": 0.3956043956043956,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 112,
+      "n_total": 95,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4105263157894737,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 113,
+      "n_total": 99,
+      "n_supervised": 39,
+      "supervised_fraction": 0.3939393939393939,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 114,
+      "n_total": 94,
+      "n_supervised": 38,
+      "supervised_fraction": 0.40425531914893614,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 115,
+      "n_total": 87,
+      "n_supervised": 34,
+      "supervised_fraction": 0.39080459770114945,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 116,
+      "n_total": 93,
+      "n_supervised": 36,
+      "supervised_fraction": 0.3870967741935484,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 117,
+      "n_total": 92,
+      "n_supervised": 37,
+      "supervised_fraction": 0.40217391304347827,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 118,
+      "n_total": 91,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4175824175824176,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 119,
+      "n_total": 96,
+      "n_supervised": 40,
+      "supervised_fraction": 0.4166666666666667,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 120,
+      "n_total": 86,
+      "n_supervised": 35,
+      "supervised_fraction": 0.4069767441860465,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 121,
+      "n_total": 92,
+      "n_supervised": 38,
+      "supervised_fraction": 0.41304347826086957,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 122,
+      "n_total": 90,
+      "n_supervised": 35,
+      "supervised_fraction": 0.3888888888888889,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 123,
+      "n_total": 94,
+      "n_supervised": 37,
+      "supervised_fraction": 0.39361702127659576,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 124,
+      "n_total": 96,
+      "n_supervised": 41,
+      "supervised_fraction": 0.4270833333333333,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 125,
+      "n_total": 87,
+      "n_supervised": 35,
+      "supervised_fraction": 0.40229885057471265,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 126,
+      "n_total": 90,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 127,
+      "n_total": 97,
+      "n_supervised": 40,
+      "supervised_fraction": 0.41237113402061853,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 128,
+      "n_total": 97,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4020618556701031,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 129,
+      "n_total": 96,
+      "n_supervised": 40,
+      "supervised_fraction": 0.4166666666666667,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 130,
+      "n_total": 94,
+      "n_supervised": 37,
+      "supervised_fraction": 0.39361702127659576,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 131,
+      "n_total": 88,
+      "n_supervised": 35,
+      "supervised_fraction": 0.3977272727272727,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 132,
+      "n_total": 99,
+      "n_supervised": 42,
+      "supervised_fraction": 0.42424242424242425,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 133,
+      "n_total": 94,
+      "n_supervised": 37,
+      "supervised_fraction": 0.39361702127659576,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 134,
+      "n_total": 95,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 135,
+      "n_total": 95,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4105263157894737,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 136,
+      "n_total": 92,
+      "n_supervised": 38,
+      "supervised_fraction": 0.41304347826086957,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 137,
+      "n_total": 91,
+      "n_supervised": 37,
+      "supervised_fraction": 0.4065934065934066,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 138,
+      "n_total": 96,
+      "n_supervised": 39,
+      "supervised_fraction": 0.40625,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 139,
+      "n_total": 90,
+      "n_supervised": 37,
+      "supervised_fraction": 0.4111111111111111,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 140,
+      "n_total": 93,
+      "n_supervised": 38,
+      "supervised_fraction": 0.40860215053763443,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 141,
+      "n_total": 93,
+      "n_supervised": 38,
+      "supervised_fraction": 0.40860215053763443,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 142,
+      "n_total": 91,
+      "n_supervised": 39,
+      "supervised_fraction": 0.42857142857142855,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 143,
+      "n_total": 92,
+      "n_supervised": 36,
+      "supervised_fraction": 0.391304347826087,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 144,
+      "n_total": 95,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4105263157894737,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 145,
+      "n_total": 91,
+      "n_supervised": 36,
+      "supervised_fraction": 0.3956043956043956,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 146,
+      "n_total": 94,
+      "n_supervised": 38,
+      "supervised_fraction": 0.40425531914893614,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 147,
+      "n_total": 94,
+      "n_supervised": 37,
+      "supervised_fraction": 0.39361702127659576,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 148,
+      "n_total": 89,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4044943820224719,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 149,
+      "n_total": 91,
+      "n_supervised": 36,
+      "supervised_fraction": 0.3956043956043956,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 150,
+      "n_total": 90,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4222222222222222,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 151,
+      "n_total": 95,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4105263157894737,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 152,
+      "n_total": 93,
+      "n_supervised": 39,
+      "supervised_fraction": 0.41935483870967744,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 153,
+      "n_total": 92,
+      "n_supervised": 37,
+      "supervised_fraction": 0.40217391304347827,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 154,
+      "n_total": 95,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4105263157894737,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 155,
+      "n_total": 88,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4090909090909091,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 156,
+      "n_total": 97,
+      "n_supervised": 40,
+      "supervised_fraction": 0.41237113402061853,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 157,
+      "n_total": 90,
+      "n_supervised": 35,
+      "supervised_fraction": 0.3888888888888889,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 158,
+      "n_total": 92,
+      "n_supervised": 38,
+      "supervised_fraction": 0.41304347826086957,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 159,
+      "n_total": 100,
+      "n_supervised": 42,
+      "supervised_fraction": 0.42,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 160,
+      "n_total": 93,
+      "n_supervised": 37,
+      "supervised_fraction": 0.3978494623655914,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 161,
+      "n_total": 92,
+      "n_supervised": 37,
+      "supervised_fraction": 0.40217391304347827,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 162,
+      "n_total": 96,
+      "n_supervised": 42,
+      "supervised_fraction": 0.4375,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 163,
+      "n_total": 94,
+      "n_supervised": 38,
+      "supervised_fraction": 0.40425531914893614,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 164,
+      "n_total": 92,
+      "n_supervised": 35,
+      "supervised_fraction": 0.3804347826086957,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 165,
+      "n_total": 89,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4044943820224719,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 166,
+      "n_total": 91,
+      "n_supervised": 35,
+      "supervised_fraction": 0.38461538461538464,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 167,
+      "n_total": 90,
+      "n_supervised": 37,
+      "supervised_fraction": 0.4111111111111111,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 168,
+      "n_total": 96,
+      "n_supervised": 41,
+      "supervised_fraction": 0.4270833333333333,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 169,
+      "n_total": 95,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4105263157894737,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 170,
+      "n_total": 93,
+      "n_supervised": 39,
+      "supervised_fraction": 0.41935483870967744,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 171,
+      "n_total": 97,
+      "n_supervised": 40,
+      "supervised_fraction": 0.41237113402061853,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 172,
+      "n_total": 92,
+      "n_supervised": 39,
+      "supervised_fraction": 0.42391304347826086,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 173,
+      "n_total": 94,
+      "n_supervised": 38,
+      "supervised_fraction": 0.40425531914893614,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 174,
+      "n_total": 95,
+      "n_supervised": 40,
+      "supervised_fraction": 0.42105263157894735,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 175,
+      "n_total": 94,
+      "n_supervised": 40,
+      "supervised_fraction": 0.425531914893617,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 176,
+      "n_total": 92,
+      "n_supervised": 38,
+      "supervised_fraction": 0.41304347826086957,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 177,
+      "n_total": 93,
+      "n_supervised": 39,
+      "supervised_fraction": 0.41935483870967744,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 178,
+      "n_total": 89,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4044943820224719,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 179,
+      "n_total": 96,
+      "n_supervised": 40,
+      "supervised_fraction": 0.4166666666666667,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 180,
+      "n_total": 93,
+      "n_supervised": 38,
+      "supervised_fraction": 0.40860215053763443,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 181,
+      "n_total": 88,
+      "n_supervised": 34,
+      "supervised_fraction": 0.38636363636363635,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 182,
+      "n_total": 93,
+      "n_supervised": 37,
+      "supervised_fraction": 0.3978494623655914,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 183,
+      "n_total": 88,
+      "n_supervised": 35,
+      "supervised_fraction": 0.3977272727272727,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 184,
+      "n_total": 96,
+      "n_supervised": 39,
+      "supervised_fraction": 0.40625,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 185,
+      "n_total": 94,
+      "n_supervised": 37,
+      "supervised_fraction": 0.39361702127659576,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 186,
+      "n_total": 96,
+      "n_supervised": 40,
+      "supervised_fraction": 0.4166666666666667,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 187,
+      "n_total": 90,
+      "n_supervised": 37,
+      "supervised_fraction": 0.4111111111111111,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 188,
+      "n_total": 94,
+      "n_supervised": 40,
+      "supervised_fraction": 0.425531914893617,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 189,
+      "n_total": 94,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4148936170212766,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 190,
+      "n_total": 96,
+      "n_supervised": 40,
+      "supervised_fraction": 0.4166666666666667,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 191,
+      "n_total": 90,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4222222222222222,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 192,
+      "n_total": 91,
+      "n_supervised": 36,
+      "supervised_fraction": 0.3956043956043956,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 193,
+      "n_total": 100,
+      "n_supervised": 40,
+      "supervised_fraction": 0.4,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 194,
+      "n_total": 99,
+      "n_supervised": 42,
+      "supervised_fraction": 0.42424242424242425,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 195,
+      "n_total": 94,
+      "n_supervised": 40,
+      "supervised_fraction": 0.425531914893617,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 196,
+      "n_total": 92,
+      "n_supervised": 38,
+      "supervised_fraction": 0.41304347826086957,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 197,
+      "n_total": 94,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4148936170212766,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 198,
+      "n_total": 93,
+      "n_supervised": 36,
+      "supervised_fraction": 0.3870967741935484,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 199,
+      "n_total": 92,
+      "n_supervised": 38,
+      "supervised_fraction": 0.41304347826086957,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 200,
+      "n_total": 93,
+      "n_supervised": 39,
+      "supervised_fraction": 0.41935483870967744,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 201,
+      "n_total": 86,
+      "n_supervised": 34,
+      "supervised_fraction": 0.3953488372093023,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 202,
+      "n_total": 95,
+      "n_supervised": 40,
+      "supervised_fraction": 0.42105263157894735,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 203,
+      "n_total": 91,
+      "n_supervised": 37,
+      "supervised_fraction": 0.4065934065934066,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 204,
+      "n_total": 96,
+      "n_supervised": 41,
+      "supervised_fraction": 0.4270833333333333,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 205,
+      "n_total": 88,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4090909090909091,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 206,
+      "n_total": 87,
+      "n_supervised": 34,
+      "supervised_fraction": 0.39080459770114945,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 207,
+      "n_total": 99,
+      "n_supervised": 41,
+      "supervised_fraction": 0.41414141414141414,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 208,
+      "n_total": 94,
+      "n_supervised": 38,
+      "supervised_fraction": 0.40425531914893614,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 209,
+      "n_total": 96,
+      "n_supervised": 39,
+      "supervised_fraction": 0.40625,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 210,
+      "n_total": 93,
+      "n_supervised": 39,
+      "supervised_fraction": 0.41935483870967744,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 211,
+      "n_total": 89,
+      "n_supervised": 37,
+      "supervised_fraction": 0.4157303370786517,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 212,
+      "n_total": 97,
+      "n_supervised": 40,
+      "supervised_fraction": 0.41237113402061853,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 213,
+      "n_total": 94,
+      "n_supervised": 38,
+      "supervised_fraction": 0.40425531914893614,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 214,
+      "n_total": 92,
+      "n_supervised": 38,
+      "supervised_fraction": 0.41304347826086957,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 215,
+      "n_total": 93,
+      "n_supervised": 39,
+      "supervised_fraction": 0.41935483870967744,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 216,
+      "n_total": 94,
+      "n_supervised": 37,
+      "supervised_fraction": 0.39361702127659576,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 217,
+      "n_total": 94,
+      "n_supervised": 38,
+      "supervised_fraction": 0.40425531914893614,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 218,
+      "n_total": 96,
+      "n_supervised": 40,
+      "supervised_fraction": 0.4166666666666667,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 219,
+      "n_total": 89,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4044943820224719,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 220,
+      "n_total": 97,
+      "n_supervised": 40,
+      "supervised_fraction": 0.41237113402061853,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 221,
+      "n_total": 93,
+      "n_supervised": 39,
+      "supervised_fraction": 0.41935483870967744,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 222,
+      "n_total": 91,
+      "n_supervised": 37,
+      "supervised_fraction": 0.4065934065934066,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 223,
+      "n_total": 91,
+      "n_supervised": 38,
+      "supervised_fraction": 0.4175824175824176,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 224,
+      "n_total": 91,
+      "n_supervised": 37,
+      "supervised_fraction": 0.4065934065934066,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 225,
+      "n_total": 96,
+      "n_supervised": 38,
+      "supervised_fraction": 0.3958333333333333,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 226,
+      "n_total": 91,
+      "n_supervised": 37,
+      "supervised_fraction": 0.4065934065934066,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 227,
+      "n_total": 95,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4105263157894737,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 228,
+      "n_total": 94,
+      "n_supervised": 37,
+      "supervised_fraction": 0.39361702127659576,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 229,
+      "n_total": 94,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4148936170212766,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 230,
+      "n_total": 92,
+      "n_supervised": 39,
+      "supervised_fraction": 0.42391304347826086,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 231,
+      "n_total": 93,
+      "n_supervised": 39,
+      "supervised_fraction": 0.41935483870967744,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 232,
+      "n_total": 91,
+      "n_supervised": 36,
+      "supervised_fraction": 0.3956043956043956,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 233,
+      "n_total": 96,
+      "n_supervised": 40,
+      "supervised_fraction": 0.4166666666666667,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 234,
+      "n_total": 97,
+      "n_supervised": 42,
+      "supervised_fraction": 0.4329896907216495,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 235,
+      "n_total": 100,
+      "n_supervised": 40,
+      "supervised_fraction": 0.4,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 236,
+      "n_total": 93,
+      "n_supervised": 40,
+      "supervised_fraction": 0.43010752688172044,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 237,
+      "n_total": 90,
+      "n_supervised": 35,
+      "supervised_fraction": 0.3888888888888889,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 238,
+      "n_total": 89,
+      "n_supervised": 36,
+      "supervised_fraction": 0.4044943820224719,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 239,
+      "n_total": 97,
+      "n_supervised": 41,
+      "supervised_fraction": 0.422680412371134,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 240,
+      "n_total": 90,
+      "n_supervised": 37,
+      "supervised_fraction": 0.4111111111111111,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 241,
+      "n_total": 98,
+      "n_supervised": 41,
+      "supervised_fraction": 0.41836734693877553,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 242,
+      "n_total": 92,
+      "n_supervised": 38,
+      "supervised_fraction": 0.41304347826086957,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 243,
+      "n_total": 93,
+      "n_supervised": 38,
+      "supervised_fraction": 0.40860215053763443,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 244,
+      "n_total": 93,
+      "n_supervised": 38,
+      "supervised_fraction": 0.40860215053763443,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 245,
+      "n_total": 93,
+      "n_supervised": 35,
+      "supervised_fraction": 0.3763440860215054,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 246,
+      "n_total": 93,
+      "n_supervised": 39,
+      "supervised_fraction": 0.41935483870967744,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 247,
+      "n_total": 92,
+      "n_supervised": 37,
+      "supervised_fraction": 0.40217391304347827,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 248,
+      "n_total": 97,
+      "n_supervised": 39,
+      "supervised_fraction": 0.4020618556701031,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    },
+    {
+      "index": 249,
+      "n_total": 95,
+      "n_supervised": 40,
+      "supervised_fraction": 0.42105263157894735,
+      "answer_is_supervised": true,
+      "question_is_masked": true,
+      "exact_tail": true
+    }
+  ]
+}

@@ -1,0 +1,274 @@
+﻿tier=T4  model=unsloth/Qwen3.5-4B  max_length=1024
+250 mẫu huấn luyện
+{
+  "instruction": "Phân loại ticket chăm sóc khách hàng sau thành JSON với đúng 4 khóa: intent, urgency, product, sentiment. Chỉ trả về JSON, không giải thích.\n\nintent thuộc: doi_tra | van_chuyen | hoan_tien | san_pham_loi | hoi_thong_tin\nurgency thuộc: cao | trung_binh | thap\nsentiment thuộc: tieu_cuc | trung_tinh | tich_cuc\nproduct: tên sản phẩm xuất hiện trong ticket.",
+  "input": "Alo sh
+eos_token: <|im_end|>
+VERDICT: reasoning preserved — safe to train on traces
+
+--- chuỗi đã render ---
+<|im_start|>user
+2+2?<|im_end|>
+<|im_start|>assistant
+<think>
+buoc 1: kiem tra. buoc 2: tra loi.
+</think>
+
+4<|im_end|>
+
+{
+  "n": 250,
+  "mean": 93.1,
+  "p50": 93,
+  "p95": 98,
+  "p99": 100,
+  "max": 101,
+  "suggested_max_length": 256,
+  "model_id": "unsloth/Qwen3.5-4B",
+  "selected_max_length": 256,
+  "enable_thinking": false,
+  "tier_max_length": 1024,
+  "n_would_truncate": 0
+}
+--- CHUỖI SAU apply_chat_template ---
+<|im_start|>system
+Phân loại ticket sau.<|im_end|>
+<|im_start|>user
+Alo shop, mình đặt balo laptop mã đơn VN411453. Cho tôi trả lại. Đã 3 ngày rồi. Cho tôi hỏi.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+{"intent": "doi_tra", "urgency": "trung_binh", "product": "balo laptop", "sentiment": "trung_tinh"}<|im_end|>
+
+======================================================================
+mode = assistant-only   supervised 37/94 (39%)
+--- LOSS TÍNH TRÊN ĐOẠN NÀY ---
+{"intent": "doi_tra", "urgency": "trung_binh", "product": "balo laptop", "sentiment": "trung_tinh"}<|im_end|>
+
+======================================================================
+mode = everything   supervised 94/94 (100%)
+--- LOSS TÍNH TRÊN ĐOẠN NÀY ---
+<|im_start|>system
+Phân loại ticket sau.<|im_end|>
+<|im_start|>user
+Alo shop, mình đặt balo laptop mã đơn VN411453. Cho tôi trả lại. Đã 3 ngày rồi. Cho tôi hỏi.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+{"intent": "doi_tra", "urgency": "trung_binh", "product": "balo laptop", "sentiment": "trung_tinh"}<|im_end|>
+
+{
+  "mask_mode": "assistant-only",
+  "model_id": "unsloth/Qwen3.5-4B",
+  "max_length": 256,
+  "enable_thinking": false,
+  "n_supervised": 37,
+  "n_total": 94,
+  "supervised_fraction": 0.3936,
+  "answer_is_supervised": true,
+  "question_is_masked": true,
+  "supervised_equals_rendered_answer_tail": true,
+  "rendered": "<|im_start|>system\nPhân loại ticket sau.<|im_end|>\n<|im_start|>user\nAlo shop, mình đặt balo laptop mã đơn VN411453. Cho tôi trả lại. Đã 3 ngày rồi. Cho tôi hỏi.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n{\"intent\": \"doi_tra\", \"urgency\": \"trung_binh\", \"product\": \"balo laptop\", \"sentiment\": \"trung_tinh\"}<|im_end|>\n",
+  "answer": "{\"intent\": \"doi_tra\", \"urgency\": \"trung_binh\", \"product\": \"balo laptop\", \"sentiment\": \"trung_tinh\"}",
+  "question": "Alo shop, mình đặt balo laptop mã đơn VN411453. Cho tôi trả lại. Đã 3 ngày rồi. Cho tôi hỏi.",
+  "supervised_text": "{\"intent\": \"doi_tra\", \"urgency\": \"trung_binh\", \"product\": \"balo laptop\", \"sentiment\": \"trung_tinh\"}<|im_end|>\n",
+  "masked_text": "<|im_start|>system\nPhân loại ticket sau.<|im_end|>\n<|im_start|>user\nAlo shop, mình đặt balo laptop mã đơn VN411453. Cho tôi trả lại. Đã 3 ngày rồi. Cho tôi hỏi.<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "input_ids": [
+    248045,
+    8678,
+    198,
+    3248,
+    38087,
+    169993,
+    11390,
+    31095,
+    13,
+    248046,
+    198,
+    248045,
+    846,
+    198,
+    32,
+    379,
+    7808,
+    11,
+    169947,
+    170252,
+    9354,
+    78,
+    20012,
+    56875,
+    170129,
+    94144,
+    19,
+    16,
+    16,
+    19,
+    20,
+    18,
+    13,
+    31504,
+    169949,
+    170705,
+    82887,
+    13,
+    181528,
+    220,
+    18,
+    169888,
+    170354,
+    13,
+    31504,
+    169949,
+    170645,
+    13,
+    248046,
+    198,
+    248045,
+    74455,
+    198,
+    248068,
+    271,
+    248069,
+    271,
+    4754,
+    54537,
+    763,
+    328,
+    46192,
+    26364,
+    487,
+    328,
+    5382,
+    2179,
+    763,
+    328,
+    371,
+    2116,
+    853,
+    20231,
+    487,
+    328,
+    2935,
+    763,
+    328,
+    65,
+    12169,
+    20012,
+    487,
+    328,
+    23737,
+    3691,
+    763,
+    328,
+    371,
+    2116,
+    516,
+    20231,
+    8934,
+    248046,
+    198
+  ],
+  "labels": [
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    -100,
+    4754,
+    54537,
+    763,
+    328,
+    46192,
+    26364,
+    487,
+    328,
+    5382,
+    2179,
+    763,
+    328,
+    371,
+    2116,
+    853,
+    20231,
+    487,
+    328,
+    2935,
+    763,
+    328,
+    65,
+    12169,
+    20012,
+    487,
+    328,
+    23737,
+    3691,
+    763,
+    328,
+    371,
+    2116,
+    516,
+    20231,
+    8934,
+    248046,
+    198
+  ]
+}
+max_length thực tế=256, p95=98, tier mặc định=1024, số mẫu bị cắt=0
+train=225  val=25  -> /mnt/e/AIVin/Day21-Track3-DinhHoangDuc-2A202602795-Finetuning-Lab/data/split

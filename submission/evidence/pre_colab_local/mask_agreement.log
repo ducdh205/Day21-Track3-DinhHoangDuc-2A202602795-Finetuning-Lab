@@ -1,0 +1,24 @@
+﻿wsl : [transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data 
+utilities can be used.
+At line:2 char:1
++ wsl -d Ubuntu --cd /mnt/e/AIVin/Day21-Track3-DinhHoangDuc-2A202602795 ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([transformers] ...es can be used.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+[transformers] return_assistant_tokens_mask==True but chat template does not contain `{% generation %}` keyword.
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data 
+utilities can be used.
+model: unsloth/Qwen3.5-4B
+chat template exposes {% generation %} markers: False
+  -> TRL cannot derive an assistant-only mask from this template alone.
+
+labkit assistant-only : 11/31 tokens (35.5%)
+  supervised text: '</think>\n\n{"intent": "doi_tra"}<|im_end|>\n'
+
+TRL assistant_masks   : 0/31 tokens (0.0%)
+  supervised text: ''
+
+trainer path: SFTTrainer would RAISE ValueError — The chat template is not training-compatible (missing prefix-preservation or `{% generatio...
+
+VERDICT: FAIL — the tokenizer-level mask is EMPTY. A pipeline that builds batches from it trains on nothing, with only a warning. (SFTTrainer itself patches or raises — see the trainer path above — but its mask is not NB1's.)

@@ -58,8 +58,11 @@ mỗi model một khác, và mask phải được chứng minh lại (NB1).
 
 ### Colab (khuyến nghị)
 
-Mở **[`colab/Lab21_RUN_ALL.ipynb`](https://colab.research.google.com/github/VinUni-AI20k/Day21-Track3-Finetuning-Lab/blob/main/colab/Lab21_RUN_ALL.ipynb)**
-→ Runtime → Change runtime type → **T4 GPU** → chạy lần lượt ô 1 → 4.
+Mở Colab bằng Chrome/Edge thường đã đăng nhập Google. **File → Upload notebook**,
+chọn **[`colab/Lab21_RUN_ALL.ipynb`](colab/Lab21_RUN_ALL.ipynb)** local,
+chọn **T4 GPU**, rồi chạy ô 1 → 4. Ô 1 nạp `submission/lab21_colab_code.zip`
+để dùng đúng các sửa đổi local chưa push. Notebook chạy full eval và EPOCHS=2.
+Chi tiết và cách tiếp tục khi lỗi: [RUN-FULL-COLAB.md](docs/RUN-FULL-COLAB.md).
 
 > **Mỗi lần repo đổi, hãy mở LẠI tab (reload), đừng chỉ reconnect.** Colab đọc mã
 > notebook từ GitHub đúng **một lần**, lúc URL được mở; reconnect, đổi runtime hay máy ảo

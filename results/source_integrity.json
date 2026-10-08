@@ -1,0 +1,72 @@
+{
+  "measured_at_utc": "2026-10-07T17:36:01.119947+00:00",
+  "tests_eval_corpus_and_prompts_unchanged": true,
+  "checksum_convention": "CRLF normalized to LF",
+  "files": [
+    {
+      "path": "data/eval_regression.jsonl",
+      "matches_head": true,
+      "sha256": "9c6ba90ea86e28fbc7102bf4cc4cb1e23c4668cf95bfcae55c3c114d34dc133b"
+    },
+    {
+      "path": "data/eval_target.jsonl",
+      "matches_head": true,
+      "sha256": "2991050fefb848c8bf3fdbc021badea9500f758d90717d7a94ae2f9b09b8915e"
+    },
+    {
+      "path": "data/train_seed.jsonl",
+      "matches_head": true,
+      "sha256": "2a58fe45d7315da0fb2934495cb7ec6717254f6df95d9560d748b10aa45409e3"
+    },
+    {
+      "path": "src/labkit/config.py",
+      "matches_head": true,
+      "sha256": "7bbd6676e1381004189f055dfdbb146c602d188654b7f5b1423bfc000168a879"
+    },
+    {
+      "path": "tests/conftest.py",
+      "matches_head": true,
+      "sha256": "1072e14f17cbbe8bdc53ef53f62042b493a5d5d51319cb746a7a920879291f9e"
+    },
+    {
+      "path": "tests/fake_tokenizer.py",
+      "matches_head": true,
+      "sha256": "3012d3785610d804d07770969c6363767ded7027a8453eff9c3a285ac8cb233a"
+    },
+    {
+      "path": "tests/test_baselines.py",
+      "matches_head": true,
+      "sha256": "9b1a2466f3c0c11e3d6e53a836d3bfbeef7594e532af364e725f5a7cafab655b"
+    },
+    {
+      "path": "tests/test_env_and_silent_defaults.py",
+      "matches_head": true,
+      "sha256": "9cdb3e5ea3e2082d4a3920849e1da18a108f0f7d643a3ed2677cbae4ae5da9d8"
+    },
+    {
+      "path": "tests/test_evaluate.py",
+      "matches_head": true,
+      "sha256": "29eb502585073ddcf4461279ae2e26d74b9027c8af9cc989b50ff9c2f7f797e8"
+    },
+    {
+      "path": "tests/test_masking.py",
+      "matches_head": true,
+      "sha256": "b916f59b98a502f8952e6e0936313d50f51046a3b8ebfd5a8c13edaf460296e4"
+    },
+    {
+      "path": "tests/test_modeling_and_train.py",
+      "matches_head": true,
+      "sha256": "f840147930701b80cd548d359f940280d243c1567e8159f338c6b95b6a4f5fce"
+    },
+    {
+      "path": "tests/test_repo_structure.py",
+      "matches_head": true,
+      "sha256": "7f3d39a94aaf462b91464bc70b73664412c3d300fd4e845acc2840410e20f3cc"
+    },
+    {
+      "path": "tests/test_report.py",
+      "matches_head": true,
+      "sha256": "81aca7cda8b75a97478519a15046d4801d1232dc83388b7ea7117944a152b433"
+    }
+  ]
+}

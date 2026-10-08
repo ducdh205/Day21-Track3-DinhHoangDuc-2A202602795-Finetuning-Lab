@@ -1,0 +1,220 @@
+T4 · unsloth/Qwen3.5-4B · all-linear · r=16 · LR 10x · 16-bit
+Tesla T4 (cuda, sm_75, 14.6 GB) -> precision=fp16
+  note: this GPU predates Ampere, so it has NO bfloat16. Using fp16 with gradient scaling instead. Tutorials that hardcode bf16=True fail here.
+
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]
+Loading weights:   0%|          | 1/426 [00:10<1:11:46, 10.13s/it]
+Loading weights:  19%|█▊        | 79/426 [00:10<00:33, 10.41it/s] 
+Loading weights:  23%|██▎       | 96/426 [00:12<00:30, 10.76it/s]
+Loading weights:  24%|██▍       | 104/426 [00:12<00:28, 11.24it/s]
+Loading weights:  26%|██▌       | 109/426 [00:12<00:26, 12.06it/s]
+Loading weights:  27%|██▋       | 114/426 [00:12<00:24, 12.98it/s]
+Loading weights:  28%|██▊       | 118/426 [00:13<00:24, 12.55it/s]
+Loading weights:  28%|██▊       | 121/426 [00:13<00:26, 11.69it/s]
+Loading weights:  30%|███       | 129/426 [00:13<00:19, 15.57it/s]
+Loading weights:  31%|███       | 133/426 [00:14<00:21, 13.92it/s]
+Loading weights:  32%|███▏      | 136/426 [00:14<00:20, 13.88it/s]
+Loading weights:  35%|███▍      | 147/426 [00:14<00:11, 23.39it/s]
+Loading weights:  36%|███▌      | 152/426 [00:14<00:13, 19.69it/s]
+Loading weights:  37%|███▋      | 156/426 [00:15<00:12, 21.37it/s]
+Loading weights:  38%|███▊      | 160/426 [00:15<00:14, 18.94it/s]
+Loading weights:  39%|███▉      | 168/426 [00:15<00:09, 25.97it/s]
+Loading weights:  40%|████      | 172/426 [00:15<00:13, 19.05it/s]
+Loading weights:  41%|████      | 175/426 [00:16<00:15, 15.84it/s]
+Loading weights:  43%|████▎     | 182/426 [00:16<00:11, 21.31it/s]
+Loading weights:  44%|████▎     | 186/426 [00:16<00:14, 16.62it/s]
+Loading weights:  44%|████▍     | 189/426 [00:17<00:17, 13.75it/s]
+Loading weights:  46%|████▌     | 196/426 [00:17<00:11, 19.80it/s]
+Loading weights:  47%|████▋     | 200/426 [00:17<00:14, 15.64it/s]
+Loading weights:  48%|████▊     | 203/426 [00:18<00:16, 13.24it/s]
+Loading weights:  48%|████▊     | 205/426 [00:18<00:20, 10.59it/s]
+Loading weights:  49%|████▉     | 210/426 [00:18<00:15, 13.62it/s]
+Loading weights:  50%|████▉     | 212/426 [00:18<00:16, 13.16it/s]
+Loading weights:  52%|█████▏    | 220/426 [00:18<00:10, 19.96it/s]
+Loading weights:  52%|█████▏    | 223/426 [00:19<00:09, 20.79it/s]
+Loading weights:  53%|█████▎    | 226/426 [00:19<00:17, 11.46it/s]
+Loading weights:  55%|█████▌    | 235/426 [00:19<00:09, 19.17it/s]
+Loading weights:  56%|█████▌    | 239/426 [00:20<00:12, 14.73it/s]
+Loading weights:  57%|█████▋    | 242/426 [00:20<00:13, 13.30it/s]
+Loading weights:  58%|█████▊    | 249/426 [00:20<00:09, 18.67it/s]
+Loading weights:  59%|█████▉    | 252/426 [00:21<00:11, 14.61it/s]
+Loading weights:  60%|█████▉    | 255/426 [00:21<00:13, 12.36it/s]
+Loading weights:  61%|██████    | 258/426 [00:22<00:15, 10.64it/s]
+Loading weights:  62%|██████▏   | 263/426 [00:22<00:12, 12.63it/s]
+Loading weights:  62%|██████▏   | 265/426 [00:22<00:13, 12.07it/s]
+Loading weights:  64%|██████▍   | 273/426 [00:22<00:08, 17.06it/s]
+Loading weights:  65%|██████▍   | 276/426 [00:22<00:08, 18.13it/s]
+Loading weights:  65%|██████▌   | 279/426 [00:23<00:15,  9.57it/s]
+Loading weights:  68%|██████▊   | 288/426 [00:23<00:08, 16.29it/s]
+Loading weights:  68%|██████▊   | 291/426 [00:24<00:10, 12.40it/s]
+Loading weights:  69%|██████▉   | 294/426 [00:24<00:11, 11.45it/s]
+Loading weights:  71%|███████   | 302/426 [00:24<00:06, 18.08it/s]
+Loading weights:  72%|███████▏  | 306/426 [00:25<00:07, 15.12it/s]
+Loading weights:  73%|███████▎  | 309/426 [00:25<00:08, 13.13it/s]
+Loading weights:  73%|███████▎  | 311/426 [00:25<00:10, 10.60it/s]
+Loading weights:  74%|███████▍  | 316/426 [00:26<00:08, 13.74it/s]
+Loading weights:  75%|███████▍  | 318/426 [00:26<00:08, 13.30it/s]
+Loading weights:  77%|███████▋  | 326/426 [00:26<00:04, 20.15it/s]
+Loading weights:  77%|███████▋  | 329/426 [00:26<00:04, 20.53it/s]
+Loading weights:  78%|███████▊  | 332/426 [00:27<00:08, 11.49it/s]
+Loading weights:  80%|████████  | 341/426 [00:27<00:04, 19.30it/s]
+Loading weights:  81%|████████  | 345/426 [00:27<00:05, 14.73it/s]
+Loading weights:  82%|████████▏ | 348/426 [00:28<00:05, 13.42it/s]
+Loading weights:  83%|████████▎ | 355/426 [00:28<00:03, 18.83it/s]
+Loading weights:  84%|████████▍ | 358/426 [00:28<00:04, 14.65it/s]
+Loading weights:  85%|████████▍ | 361/426 [00:29<00:05, 12.38it/s]
+Loading weights:  85%|████████▌ | 364/426 [00:29<00:05, 11.05it/s]
+Loading weights:  87%|████████▋ | 369/426 [00:29<00:04, 13.90it/s]
+Loading weights:  87%|████████▋ | 371/426 [00:29<00:04, 13.42it/s]
+Loading weights:  89%|████████▉ | 379/426 [00:29<00:02, 20.02it/s]
+Loading weights:  90%|████████▉ | 382/426 [00:30<00:02, 20.56it/s]
+Loading weights:  90%|█████████ | 385/426 [00:30<00:03, 11.90it/s]
+Loading weights:  92%|█████████▏| 394/426 [00:30<00:01, 19.76it/s]
+Loading weights:  93%|█████████▎| 398/426 [00:31<00:01, 14.67it/s]
+Loading weights:  94%|█████████▍| 401/426 [00:31<00:01, 13.76it/s]
+Loading weights:  96%|█████████▌| 408/426 [00:31<00:00, 19.29it/s]
+Loading weights:  96%|█████████▋| 411/426 [00:32<00:01, 14.62it/s]
+Loading weights:  97%|█████████▋| 414/426 [00:32<00:00, 12.33it/s]
+Loading weights:  98%|█████████▊| 417/426 [00:32<00:00, 10.82it/s]
+Loading weights:  99%|█████████▉| 422/426 [00:33<00:00, 13.74it/s]
+Loading weights: 100%|█████████▉| 424/426 [00:33<00:00, 13.93it/s]
+Loading weights: 100%|██████████| 426/426 [00:33<00:00, 12.80it/s]
+{
+  "num_hidden_layers": 32,
+  "full_attention_interval": 4,
+  "linear_num_key_heads": 16,
+  "layer_types": {
+    "linear_attention": 24,
+    "full_attention": 8
+  }
+}
+placement=text-linear  modules=['down_proj', 'gate_proj', 'in_proj_a', 'in_proj_b', 'in_proj_qkv', 'in_proj_z', 'k_proj', 'o_proj', 'out_proj', 'q_proj', 'up_proj', 'v_proj']
+trainable LoRA params ≈ 32.46 M
+    {'placement': 'text-linear', 'modules': 12, 'r': 16, 'trainable': 32464896}
+    {'placement': 'attn-only(q,v)', 'modules': 2, 'r': 16, 'trainable': 1835008}
+    {'placement': 'attn-only(q,v) matched', 'modules': 2, 'r': 283, 'trainable': 32456704}
+Dataset({
+    features: ['input_ids', 'labels', 'attention_mask'],
+    num_rows: 225
+})
+mask_mode = assistant-only   supervised 8564/20951 tokens (40.9%)
+epochs=2.0  ->  30 optimizer steps  (NB4 runs its contrasts at exactly this many)
+{
+  "output_dir": "/content/lab21_student/adapters/correct",
+  "max_length": "256",
+  "per_device_train_batch_size": "1",
+  "gradient_accumulation_steps": "16",
+  "learning_rate": "0.0001",
+  "lr_scheduler_type": "cosine",
+  "num_train_epochs": "2.0",
+  "logging_steps": "5",
+  "save_strategy": "no",
+  "report_to": "none",
+  "seed": "42",
+  "packing": "False",
+  "loss_type": "chunked_nll",
+  "gradient_checkpointing": "True",
+  "warmup_steps": "3",
+  "bf16": "False",
+  "fp16": "True",
+  "padding_free": "False",
+  "max_steps": "30"
+}
+
+Truncating train dataset:   0%|          | 0/225 [00:00<?, ? examples/s]
+Truncating train dataset: 100%|██████████| 225/225 [00:00<00:00, 5373.39 examples/s]
+
+Dropping fully masked examples from train dataset:   0%|          | 0/225 [00:00<?, ? examples/s]
+Dropping fully masked examples from train dataset: 100%|██████████| 225/225 [00:00<00:00, 28630.50 examples/s]
+--- ACTUAL TRAINING BATCH: labels != -100 ---
+{"intent": "san_pham_loi", "urgency": "trung_binh", "product": "tai nghe bluetooth", "sentiment": "tieu_cuc"}<|im_end|>
+
+precision fix: {'precision': 'fp16', 'recast': 0, 'trainable_tensors': 496}
+[transformers] The tokenizer has new PAD/BOS/EOS tokens that differ from the model config and generation config. The model config and generation config were aligned accordingly, being updated with the tokenizer's values. Updated tokens: {'eos_token_id': 248046}.
+
+  0%|          | 0/30 [00:00<?, ?it/s][transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+
+  3%|▎         | 1/30 [00:18<08:43, 18.05s/it]
+  7%|▋         | 2/30 [00:31<07:12, 15.46s/it]
+ 10%|█         | 3/30 [00:44<06:30, 14.46s/it]
+ 13%|█▎        | 4/30 [00:58<06:09, 14.22s/it]
+ 17%|█▋        | 5/30 [01:12<05:50, 14.01s/it]
+                                              
+{'loss': '2.277', 'grad_norm': 'nan', 'learning_rate': '9.966e-05', 'entropy': '1.239', 'num_tokens': '7479', 'mean_token_accuracy': '0.6379', 'epoch': '0.3556'}
+
+ 17%|█▋        | 5/30 [01:12<05:50, 14.01s/it]
+ 20%|██        | 6/30 [01:26<05:34, 13.92s/it]
+ 23%|██▎       | 7/30 [01:39<05:16, 13.75s/it]
+ 27%|██▋       | 8/30 [01:53<05:01, 13.70s/it]
+ 30%|███       | 9/30 [02:06<04:45, 13.60s/it]
+ 33%|███▎      | 10/30 [02:20<04:33, 13.69s/it]
+                                               
+{'loss': '1.458', 'grad_norm': '2.709', 'learning_rate': '8.83e-05', 'entropy': '1.086', 'num_tokens': '1.49e+04', 'mean_token_accuracy': '0.7578', 'epoch': '0.7111'}
+
+ 33%|███▎      | 10/30 [02:20<04:33, 13.69s/it]
+ 37%|███▋      | 11/30 [02:34<04:22, 13.84s/it]
+ 40%|████      | 12/30 [02:47<04:05, 13.65s/it]
+ 43%|████▎     | 13/30 [03:01<03:50, 13.55s/it]
+ 47%|████▋     | 14/30 [03:14<03:36, 13.55s/it]
+ 50%|█████     | 15/30 [03:15<02:25,  9.70s/it]
+                                               
+{'loss': '0.15', 'grad_norm': '0.612', 'learning_rate': '6.434e-05', 'entropy': '0.2848', 'num_tokens': '2.095e+04', 'mean_token_accuracy': '0.9581', 'epoch': '1'}
+
+ 50%|█████     | 15/30 [03:15<02:25,  9.70s/it]
+ 53%|█████▎    | 16/30 [03:29<02:32, 10.89s/it]
+ 57%|█████▋    | 17/30 [03:42<02:31, 11.62s/it]
+ 60%|██████    | 18/30 [03:56<02:27, 12.26s/it]
+ 63%|██████▎   | 19/30 [04:09<02:18, 12.59s/it]
+ 67%|██████▋   | 20/30 [04:23<02:08, 12.88s/it]
+                                               
+{'loss': '0.03048', 'grad_norm': '1.239', 'learning_rate': '3.566e-05', 'entropy': '0.04269', 'num_tokens': '2.843e+04', 'mean_token_accuracy': '0.987', 'epoch': '1.356'}
+
+ 67%|██████▋   | 20/30 [04:23<02:08, 12.88s/it]
+ 70%|███████   | 21/30 [04:36<01:57, 13.10s/it]
+ 73%|███████▎  | 22/30 [04:50<01:47, 13.41s/it]
+ 77%|███████▋  | 23/30 [05:04<01:33, 13.40s/it]
+ 80%|████████  | 24/30 [05:18<01:21, 13.56s/it]
+ 83%|████████▎ | 25/30 [05:31<01:07, 13.47s/it]
+                                               
+{'loss': '0.01658', 'grad_norm': '0.3627', 'learning_rate': '1.17e-05', 'entropy': '0.02344', 'num_tokens': '3.59e+04', 'mean_token_accuracy': '0.9936', 'epoch': '1.711'}
+
+ 83%|████████▎ | 25/30 [05:31<01:07, 13.47s/it]
+ 87%|████████▋ | 26/30 [05:45<00:54, 13.56s/it]
+ 90%|█████████ | 27/30 [05:59<00:41, 13.75s/it]
+ 93%|█████████▎| 28/30 [06:13<00:27, 13.98s/it]
+ 97%|█████████▋| 29/30 [06:28<00:14, 14.16s/it]
+100%|██████████| 30/30 [06:29<00:00, 10.25s/it]
+                                               
+{'loss': '0.02789', 'grad_norm': 'nan', 'learning_rate': '3.381e-07', 'entropy': '0.01644', 'num_tokens': '4.19e+04', 'mean_token_accuracy': '0.9963', 'epoch': '2'}
+
+100%|██████████| 30/30 [06:29<00:00, 10.25s/it]
+                                               
+{'train_runtime': '389.7', 'train_samples_per_second': '1.232', 'train_steps_per_second': '0.077', 'train_loss': '0.6599', 'epoch': '2'}
+
+100%|██████████| 30/30 [06:29<00:00, 10.25s/it]
+100%|██████████| 30/30 [06:29<00:00, 12.99s/it]
+train 390s  final loss 0.6599
+saved -> /content/lab21_student/adapters/correct
+{
+  "run": "correct",
+  "label": "all-linear · r=16 · LR 10x · 16-bit",
+  "tier": "T4",
+  "model": "unsloth/Qwen3.5-4B",
+  "precision": "fp16",
+  "placement": "text-linear",
+  "n_target_modules": 12,
+  "r": 16,
+  "lora_alpha": 32,
+  "learning_rate": 0.0001,
+  "load_in_4bit": false,
+  "trainable_params": 32464896,
+  "train_seconds": 390.1,
+  "peak_vram_gb": 8.78,
+  "final_loss": 0.6599,
+  "mask_mode": "assistant-only",
+  "max_length": 256,
+  "enable_thinking": false,
+  "actual_steps": 30,
+  "max_steps": 30
+}

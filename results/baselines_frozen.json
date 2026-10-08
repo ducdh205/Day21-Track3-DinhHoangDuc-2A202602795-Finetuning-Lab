@@ -1,0 +1,60 @@
+{
+  "tier": "T4",
+  "model": "unsloth/Qwen3.5-4B",
+  "baseline_a": {
+    "target": 0.0,
+    "regression": 0.7911111111111111,
+    "format": 0.0,
+    "latency_ms": 3181.527480159984,
+    "n": 50,
+    "extra": {}
+  },
+  "baseline_b": {
+    "target": 0.85,
+    "regression": 0.7911111111111111,
+    "format": 1.0,
+    "latency_ms": 1412.6502093799988,
+    "n": 50,
+    "extra": {}
+  },
+  "optimized_prompt_sha": "4f9ca3c2c36b3c10",
+  "n_target": 50,
+  "n_regression": 15,
+  "eval_limit": null,
+  "smoke_mode": false,
+  "started_at_utc": "2026-10-08T03:47:15.341980+00:00",
+  "finished_at_utc": "2026-10-08T03:58:58.499465+00:00",
+  "elapsed_seconds": 703.157,
+  "measured_before_training": true,
+  "eval_checksums_sha256": {
+    "eval_target.jsonl": "2991050fefb848c8bf3fdbc021badea9500f758d90717d7a94ae2f9b09b8915e",
+    "eval_regression.jsonl": "9c6ba90ea86e28fbc7102bf4cc4cb1e23c4668cf95bfcae55c3c114d34dc133b"
+  },
+  "checksum_convention": "sha256 with CRLF normalized to LF",
+  "naive_prompt": "Phân loại ticket sau.",
+  "optimized_prompt": "Bạn là hệ thống phân loại ticket CSKH. Trả về DUY NHẤT một object JSON, không kèm giải thích, không kèm markdown fence.\n\nSchema bắt buộc — đúng 4 khóa:\n{\"intent\": ..., \"urgency\": ..., \"product\": ..., \"sentiment\": ...}\n\nintent    ∈ doi_tra | van_chuyen | hoan_tien | san_pham_loi | hoi_thong_tin\nurgency   ∈ cao | trung_binh | thap\nsentiment ∈ tieu_cuc | trung_tinh | tich_cuc\nproduct   = tên sản phẩm xuất hiện nguyên văn trong ticket\n\nVí dụ:\nTicket: \"Shop ơi, mình đặt bàn phím cơ mã đơn DH123456. Giao hàng chậm. Đã 3 ngày rồi. Nhờ shop kiểm tra.\"\nJSON: {\"intent\": \"van_chuyen\", \"urgency\": \"trung_binh\", \"product\": \"bàn phím cơ\", \"sentiment\": \"trung_tinh\"}\n\nHướng dẫn: phân loại độc lập từng trường. Sản phẩm lỗi thuộc san_pham_loi;\nyêu cầu đổi hoặc trả hàng thuộc doi_tra; yêu cầu trả lại tiền thuộc hoan_tien.\nKhông suy diễn urgency từ sentiment: một khách bực mình vẫn có thể không vội.\nSao chép đúng tên sản phẩm, không đưa mã đơn vào product.\n\nCác ví dụ bổ sung dưới đây lấy từ tập train (split seed 42), không lấy từ eval:\nTicket: \"Shop ơi, mình đặt tai nghe bluetooth mã đơn VN847706. Sai màu. Đã 3 ngày rồi. Bực mình.\"\nJSON: {\"intent\": \"san_pham_loi\", \"urgency\": \"trung_binh\", \"product\": \"tai nghe bluetooth\", \"sentiment\": \"tieu_cuc\"}\nTicket: \"Alo shop, mình đặt nồi chiên không dầu mã đơn DH630832. Bảo hành bao lâu. Đã 3 ngày rồi. Shop xem giúp.\"\nJSON: {\"intent\": \"hoi_thong_tin\", \"urgency\": \"trung_binh\", \"product\": \"nồi chiên không dầu\", \"sentiment\": \"trung_tinh\"}\nTicket: \"Alo shop, mình đặt đèn bàn LED mã đơn VN661768. Shipper không gọi. Khi nào tiện. Lần cuối mua ở đây.\"\nJSON: {\"intent\": \"van_chuyen\", \"urgency\": \"thap\", \"product\": \"đèn bàn LED\", \"sentiment\": \"tieu_cuc\"}\nTicket: \"Shop ơi, mình đặt chuột không dây mã đơn DH645694. Trả lại tiền. Gấp. Shop hỗ trợ tốt.\"\nJSON: {\"intent\": \"hoan_tien\", \"urgency\": \"cao\", \"product\": \"chuột không dây\", \"sentiment\": \"tich_cuc\"}\nTicket: \"Alo shop, mình đặt áo khoác gió mã đơn VN157511. Muốn đổi. Không vội. Mình vẫn tin tưởng shop.\"\nJSON: {\"intent\": \"doi_tra\", \"urgency\": \"thap\", \"product\": \"áo khoác gió\", \"sentiment\": \"tich_cuc\"}\n\nÁp dụng schema cho ticket mới của người dùng. Chỉ xuất object JSON của ticket mới.",
+  "optimized_prompt_sha256": "4f9ca3c2c36b3c108235a971e99971644c563cc34db57460324fa3e703503a38",
+  "hardware": {
+    "device": "cuda",
+    "name": "Tesla T4",
+    "bf16": false,
+    "fp16": true,
+    "capability": "7.5",
+    "vram_gb": 14.6
+  },
+  "precision": "fp16",
+  "generation": {
+    "do_sample": false,
+    "enable_thinking": false,
+    "batch_size": 4,
+    "target_max_new_tokens": 160,
+    "regression_max_new_tokens": 96
+  },
+  "model_revision": null,
+  "packages": {
+    "transformers": "5.18.0",
+    "tokenizers": "0.23.2"
+  },
+  "predictions_sha256": "267e7001b660da9f9a3a8b52e18d303f46d8dbb5a56a0de0d78a6086e2fcdd7a",
+  "frozen_at_utc": "2026-10-08T03:58:58.506695+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "n": 250,
+  "mean": 93.1,
+  "p50": 93,
+  "p95": 98,
+  "p99": 100,
+  "max": 101,
+  "suggested_max_length": 256,
+  "model_id": "unsloth/Qwen3.5-4B",
+  "selected_max_length": 256,
+  "enable_thinking": false,
+  "tier_max_length": 1024,
+  "n_would_truncate": 0
+}
